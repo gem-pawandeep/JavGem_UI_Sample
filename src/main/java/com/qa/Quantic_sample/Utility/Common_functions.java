@@ -16,23 +16,19 @@ public class Common_functions {
     public static void signInAmazon(String email, String pass) {
         DriverAction.click(Amazon_locators.sign_in_button, "Sign in");
         DriverAction.typeText(Amazon_locators.user_name_box, email, "Email");
-        DriverAction.waitSec(1);
         DriverAction.click(Amazon_locators.Continue_button, "Continue");
-        GemTestReporter.addTestStep("Typing Password","********",STATUS.PASS);
+        GemTestReporter.addTestStep("Typing Password", "********", STATUS.PASS);
         DriverAction.typeTextWithoutReporting(Amazon_locators.user_password_box, pass);
-        DriverAction.waitSec(1);
         DriverAction.click(Amazon_locators.Continue_button, "Sign in");
-        DriverAction.waitSec(2);
     }
 
     public static void hyperLinkValidation(By link, String item) {
         DriverAction.click(link, item);
-        DriverAction.waitSec(2);
         String verify = DriverAction.getTitleWithoutReporting(DriverAction.getCurrentURL());
         if (verify.contains(item)) {
-            GemTestReporter.addTestStep("Validation Successful", "Current page : " + item+"<br>Current URL:"+DriverAction.getCurrentURL(), STATUS.PASS);
+            GemTestReporter.addTestStep("Validation Successful", "Current page : " + item + "<br>Current URL:" + DriverAction.getCurrentURL(), STATUS.PASS);
         } else {
-            GemTestReporter.addTestStep("Validation Unsuccessful", "Current page : " + item+"<br>Current URL:"+DriverAction.getCurrentURL(), STATUS.FAIL);
+            GemTestReporter.addTestStep("Validation Unsuccessful", "Current page : " + item + "<br>Current URL:" + DriverAction.getCurrentURL(), STATUS.FAIL);
         }
     }
 }

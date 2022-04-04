@@ -49,12 +49,12 @@ public class Amazon {
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(2));
         int price2 = Integer.parseInt(DriverAction.getElementText(Amazon_locators.price));
-        GemTestReporter.addTestStep("Price of first result", DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        GemTestReporter.addTestStep("first result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
         DriverManager.closeDriver();
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         int price1 = Integer.parseInt(DriverAction.getElementText(Amazon_locators.price));
-        GemTestReporter.addTestStep("Price of second result", DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        GemTestReporter.addTestStep("second result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
         DriverManager.closeDriver();
         DriverAction.switchToWindow(newTb.get(0));
         if (price2 < price1) {
@@ -78,14 +78,14 @@ public class Amazon {
         String temp = DriverAction.getElementText(Amazon_locators.price);
         String price = temp.replace(",", "");
         int price2 = Integer.parseInt(price);
-        GemTestReporter.addTestStep("Price of first result", DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        GemTestReporter.addTestStep("first result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
         DriverManager.closeDriver();
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         String temp1 = DriverAction.getElementText(Amazon_locators.price);
         String pricee = temp1.replace(",", "");
         int price1 = Integer.parseInt(pricee);
-        GemTestReporter.addTestStep("Price of second result", DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        GemTestReporter.addTestStep("first result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
         DriverManager.closeDriver();
         DriverAction.switchToWindow(newTb.get(0));
         if (price2 > price1) {
