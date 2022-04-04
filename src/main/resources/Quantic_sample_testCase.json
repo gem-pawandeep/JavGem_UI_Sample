@@ -1,0 +1,89 @@
+{
+  "launchedAmazon": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S001",
+    "inputData": {
+      "id": 101
+    }
+  },
+  "loginCorrectCredentials": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S002",
+    "inputData": {
+      "id": 102,
+      "email": "pawan27cool@gmail.com",
+      "pass": "Gemini@123"
+    }
+  },
+  "loginIncorrectCredentials": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S003",
+    "inputData": {
+      "id": 103,
+      "email": "abc@gmail.com",
+      "pass": "abc@123"
+    }
+  },
+  "validateEmptyCartByDefault": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S004",
+    "inputData": {
+      "id": 104
+    }
+  },
+  "getPriceOfFirstResult": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S005",
+    "inputData": {
+      "id": 105,
+      "item": "earphones"
+    }
+  },
+  "validateSortByLowToHigh": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S006",
+    "inputData": {
+      "id": 106,
+      "item": "earphones"
+    }
+  },
+  "validateSortByHighToLow": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S007",
+    "inputData": {
+      "id": 107,
+      "item": "mixer"
+    }
+  },
+  "validateInstagramHyperlink": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S008",
+    "inputData": {
+      "id": 108
+    }
+  },
+  "validateFacebookHyperlink": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S009",
+    "inputData": {
+      "id": 109
+    }
+  },
+  "validateTwitterHyperlink": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S009",
+    "inputData": {
+      "id": 109
+    }
+  }
+}
