@@ -13,7 +13,6 @@ public class Amazon_locators {
     public static By search_Button = By.xpath("//*[@class='nav-search-submit nav-sprite']");
     public static By first_result = By.xpath("//*[@data-image-index='1']");
     public static By second_result = By.xpath("//*[@data-image-index='2']");
-
     public static By price = By.xpath("//span[@class='a-price-whole']");
     public static By price1 = By.xpath("//*[@class='a-price a-text-price a-size-medium']");
     public static By tittle = By.xpath("//span[@id='productTitle']");
