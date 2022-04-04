@@ -98,7 +98,7 @@ public class amazonTestCases extends QuanticUIBase {
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void validateInstagramHyperlink(JsonObject inputData) {
         try {
-            Amazon.validateHyperlink(Amazon_locators.insta_link, "Instagram");
+            Amazon.validateHyperlink(Amazon_locators.insta_link, "instagram");
         } catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
         }
@@ -107,7 +107,7 @@ public class amazonTestCases extends QuanticUIBase {
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void validateFacebookHyperlink(JsonObject inputData) {
         try {
-            Amazon.validateHyperlink(Amazon_locators.fb_link, "Facebook");
+            Amazon.validateHyperlink(Amazon_locators.fb_link, "facebook");
         } catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
         }
@@ -116,7 +116,7 @@ public class amazonTestCases extends QuanticUIBase {
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void validateTwitterHyperlink(JsonObject inputData) {
         try {
-            Amazon.validateHyperlink(Amazon_locators.twitter_link, "Twitter");
+            Amazon.validateHyperlink(Amazon_locators.twitter_link, "twitter");
         } catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
         }

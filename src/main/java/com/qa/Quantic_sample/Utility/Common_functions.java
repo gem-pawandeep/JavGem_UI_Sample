@@ -24,7 +24,7 @@ public class Common_functions {
 
     public static void hyperLinkValidation(By link, String item) {
         DriverAction.click(link, item);
-        String verify = DriverAction.getTitleWithoutReporting(DriverAction.getCurrentURL());
+        String verify = DriverAction.getCurrentURL();
         if (verify.contains(item)) {
             GemTestReporter.addTestStep("Validation Successful", "Current page : " + item + "<br>Current URL:" + DriverAction.getCurrentURL(), STATUS.PASS);
         } else {
