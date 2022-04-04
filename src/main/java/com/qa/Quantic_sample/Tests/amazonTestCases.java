@@ -27,6 +27,8 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+
+
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void loginCorrectCredentials(JsonObject inputData) {
         try {
