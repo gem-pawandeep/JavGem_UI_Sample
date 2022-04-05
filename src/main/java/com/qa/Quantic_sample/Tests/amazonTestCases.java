@@ -31,6 +31,7 @@ public class amazonTestCases extends QuanticUIBase {
     public void loginCorrectCredentials(JsonObject inputData) {
         try {
             Amazon.SignIn(inputData.get("email").getAsString(), inputData.get("pass").getAsString());
+            DriverAction.waitSec(15);
             String url1 = DriverAction.getCurrentURL();
             String title = DriverAction.getTitleWithoutReporting(url1);
             if (title.contains("Amazon.in")) {
