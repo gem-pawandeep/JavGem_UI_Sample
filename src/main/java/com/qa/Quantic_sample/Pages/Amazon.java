@@ -69,7 +69,7 @@ public class Amazon {
     public static void highToLow(String item) {
         Common_functions.search(item);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
-        DriverAction.click(Amazon_locators.high_low, "low to high");
+        DriverAction.click(Amazon_locators.high_low, "high to low");
         DriverAction.click(Amazon_locators.first_result, "First result");
         DriverAction.click(Amazon_locators.second_result, "Second result");
         ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
@@ -99,5 +99,93 @@ public class Amazon {
 
     public static void validateHyperlink(By link, String item) {
         Common_functions.hyperLinkValidation(link, item);
+    }
+
+    public static void maxPrice(String item) {
+        Common_functions.search(item);
+        DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
+        DriverAction.click(Amazon_locators.high_low, "high to low");
+        DriverAction.click(Amazon_locators.first_result, "result");
+        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(1));
+        GemTestReporter.addTestStep("Result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        DriverManager.closeDriver();
+        GemTestReporter.addTestStep("Control transfer to previous tab", "Successful", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(0));
+    }
+
+    public static void minPrice(String item) {
+        Common_functions.search(item);
+        DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
+        DriverAction.click(Amazon_locators.low_high, "low to high");
+        DriverAction.click(Amazon_locators.first_result, "result");
+        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(1));
+        GemTestReporter.addTestStep("Result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        DriverManager.closeDriver();
+        GemTestReporter.addTestStep("Control transfer to previous tab", "Successful", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(0));
+    }
+
+    public static void diffMaxMin(String item) {
+        Common_functions.search(item);
+        DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
+        DriverAction.click(Amazon_locators.high_low, "high to low");
+        DriverAction.click(Amazon_locators.first_result, "First result");
+        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(1));
+        String temp = DriverAction.getElementText(Amazon_locators.price);
+        String price = temp.replace(",", "");
+        int high = Integer.parseInt(price);
+        GemTestReporter.addTestStep("first result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        DriverManager.closeDriver();
+        DriverAction.switchToWindow(newTb.get(0));
+        DriverAction.navigateRefresh();
+        DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
+        DriverAction.click(Amazon_locators.low_high, "low to high");
+        DriverAction.click(Amazon_locators.first_result, "First result");
+        ArrayList<String> newTb1 = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
+        DriverAction.switchToWindow(newTb1.get(1));
+        String temp1 = DriverAction.getElementText(Amazon_locators.price);
+        String price1 = temp1.replace(",", "");
+        int low = Integer.parseInt(price1);
+        GemTestReporter.addTestStep("first result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
+        DriverManager.closeDriver();
+        DriverAction.switchToWindow(newTb1.get(0));
+        GemTestReporter.addTestStep("Difference", " " + (high - low), STATUS.PASS);
+
+    }
+
+    public static void validateLanguage(String lang) {
+        DriverAction.click(Amazon_locators.lang_button, "language");
+        DriverAction.waitSec(2);
+        if (lang.equals("hi")) {
+            DriverAction.click(Amazon_locators.hindi, "Hindi");
+            DriverAction.click(Amazon_locators.lang_submit, "Save changes");
+            DriverAction.waitSec(2);
+            String hindi = DriverAction.getCurrentURL();
+            if (hindi.contains("hi")) {
+                GemTestReporter.addTestStep("Validation", "Current page in Hindi Language<br>", STATUS.PASS);
+            }
+            else{
+                GemTestReporter.addTestStep("Validation", "Current page Not in Hindi Language", STATUS.FAIL);
+            }
+        } else if (lang.equals("ta")) {
+            DriverAction.click(Amazon_locators.tamil, "Tamil");
+            DriverAction.click(Amazon_locators.lang_submit, "Save changes");
+            DriverAction.waitSec(2);
+            String eng = DriverAction.getCurrentURL();
+            if (eng.contains("ta")) {
+                GemTestReporter.addTestStep("Validation", "Current page in Tamil Language<br>", STATUS.PASS);
+            }
+            else{
+                GemTestReporter.addTestStep("Validation", "Current page Not in Tamil Language", STATUS.FAIL);
+            }
+        }
+
     }
 }

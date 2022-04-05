@@ -121,4 +121,49 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
         }
     }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void maxPriceSearchItem(JsonObject inputData) {
+        try {
+            Amazon.maxPrice(inputData.get("item").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void minPriceSearchItem(JsonObject inputData) {
+        try {
+            Amazon.minPrice(inputData.get("item").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void getDiffMaxMinItem(JsonObject inputData) {
+        try {
+            Amazon.diffMaxMin(inputData.get("item").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeHindi(JsonObject inputData) {
+        try {
+            Amazon.validateLanguage(inputData.get("Hindi").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeTamil(JsonObject inputData) {
+        try {
+            Amazon.validateLanguage(inputData.get("Tamil").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
 }

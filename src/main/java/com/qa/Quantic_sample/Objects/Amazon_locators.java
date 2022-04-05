@@ -23,5 +23,8 @@ public class Amazon_locators {
     public static By fb_link = By.xpath("//*[@id='navFooter']//div[3]//li[1]//a");
     public static By insta_link = By.xpath("//*[@id='navFooter']//div[3]//li[3]//a");
     public static By twitter_link = By.xpath("//*[@id='navFooter']//div[3]//li[2]//a");
-
+    public static By lang_button = By.xpath("//span[@class='icp-nav-link-inner']");
+    public static By hindi = By.xpath("//*[@id='icp-language-settings']/div[3]");
+    public static By tamil = By.xpath("//*[@id='icp-language-settings']/div[4]");
+    public static By lang_submit = By.xpath("//input[@aria-labelledby='icp-save-button-announce']");
 }

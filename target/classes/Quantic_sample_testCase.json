@@ -81,9 +81,54 @@
   "validateTwitterHyperlink": {
     "runFlag": "Y",
     "category": "Test",
-    "scenarioID": "V2S009",
+    "scenarioID": "V2S010",
     "inputData": {
-      "id": 109
+      "id": 110
+    }
+  },
+  "maxPriceSearchItem": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S011",
+    "inputData": {
+      "id": 111,
+      "item": "mixer"
+    }
+  },
+  "minPriceSearchItem": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S012",
+    "inputData": {
+      "id": 112,
+      "item": "mixer"
+    }
+  },
+  "getDiffMaxMinItem": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S013",
+    "inputData": {
+      "id": 113,
+      "item": "mixer"
+    }
+  },
+  "validateLangChangeHindi": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S013",
+    "inputData": {
+      "id": 114,
+      "Hindi": "hi"
+    }
+  },
+  "validateLangChangeTamil": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S013",
+    "inputData": {
+      "id": 115,
+      "Tamil": "ta"
     }
   }
 }
