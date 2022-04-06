@@ -184,6 +184,13 @@
       "id": 121,
       "English": "en"
     }
+  },
+  "alexaDotFromLeftTreeMenu": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S021",
+    "inputData": {
+      "id": 122
+    }
   }
-
 }

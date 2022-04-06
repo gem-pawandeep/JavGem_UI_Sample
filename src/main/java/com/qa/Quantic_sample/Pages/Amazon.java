@@ -256,4 +256,15 @@ public class Amazon {
         }
 
     }
+
+    public static void alexaDot(){
+        DriverAction.click(Amazon_locators.all,"All");
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.echodot,"Echo & Alexa");
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.item,"Echo Dot");
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Title",DriverAction.getElementText(Amazon_locators.tittle),STATUS.PASS);
+        GemTestReporter.addTestStep("Price",DriverAction.getElementText(Amazon_locators.price),STATUS.PASS);
+    }
 }

@@ -227,4 +227,14 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void alexaDotFromLeftTreeMenu(JsonObject inputData) {
+        try {
+            Amazon.alexaDot();
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+
 }

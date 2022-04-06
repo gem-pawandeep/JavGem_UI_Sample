@@ -33,4 +33,9 @@ public class Amazon_locators {
     public static By bangla = By.xpath("//*[@id='icp-language-settings']/div[8]");
     public static By marathi = By.xpath("//*[@id='icp-language-settings']/div[9]");
     public static By lang_submit = By.xpath("//input[@aria-labelledby='icp-save-button-announce']");
+    public static By all=By.xpath("//*[@class='hm-icon nav-sprite']");
+    public static By echodot=By.xpath("//a[@data-menu-id='2']");
+    public static By item=By.xpath("//*[@id='hmenu-content']/ul[2]/li[3]/a");
+    public static By buyNow=By.xpath("//input[@id='buy-now-button']");
+
 }
