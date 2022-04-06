@@ -180,8 +180,7 @@ public class Amazon {
             String hindi = DriverAction.getCurrentURL();
             if (hindi.contains("hi")) {
                 GemTestReporter.addTestStep("Validation", "Current page in Hindi Language<br>", STATUS.PASS);
-            }
-            else{
+            } else {
                 GemTestReporter.addTestStep("Validation", "Current page Not in Hindi Language", STATUS.FAIL);
             }
         } else if (lang.equals("ta")) {
@@ -191,67 +190,70 @@ public class Amazon {
             String eng = DriverAction.getCurrentURL();
             if (eng.contains("ta")) {
                 GemTestReporter.addTestStep("Validation", "Current page in Tamil Language<br>", STATUS.PASS);
-            }
-            else{
+            } else {
                 GemTestReporter.addTestStep("Validation", "Current page Not in Tamil Language", STATUS.FAIL);
             }
-        }else if (lang.equals("te")) {
+        } else if (lang.equals("te")) {
             DriverAction.click(Amazon_locators.telgu, "Telgu");
             DriverAction.click(Amazon_locators.lang_submit, "Save changes");
             DriverAction.waitSec(2);
             String eng = DriverAction.getCurrentURL();
             if (eng.contains("te")) {
                 GemTestReporter.addTestStep("Validation", "Current page in Telgu Language<br>", STATUS.PASS);
-            }
-            else{
+            } else {
                 GemTestReporter.addTestStep("Validation", "Current page Not in Telgu Language", STATUS.FAIL);
             }
-        }else if (lang.equals("kn")) {
+        } else if (lang.equals("kn")) {
             DriverAction.click(Amazon_locators.Kannda, "Kannada");
             DriverAction.click(Amazon_locators.lang_submit, "Save changes");
             DriverAction.waitSec(2);
             String eng = DriverAction.getCurrentURL();
             if (eng.contains("kn")) {
                 GemTestReporter.addTestStep("Validation", "Current page in Kannada Language<br>", STATUS.PASS);
-            }
-            else{
+            } else {
                 GemTestReporter.addTestStep("Validation", "Current page Not in Kannada Language", STATUS.FAIL);
             }
-        }else if (lang.equals("ml")) {
+        } else if (lang.equals("ml")) {
             DriverAction.click(Amazon_locators.malyalam, "Malyalam");
             DriverAction.click(Amazon_locators.lang_submit, "Save changes");
             DriverAction.waitSec(2);
             String eng = DriverAction.getCurrentURL();
             if (eng.contains("ml")) {
                 GemTestReporter.addTestStep("Validation", "Current page in Malyalam Language<br>", STATUS.PASS);
-            }
-            else{
+            } else {
                 GemTestReporter.addTestStep("Validation", "Current page Not in Malyalam Language", STATUS.FAIL);
             }
-        }else if (lang.equals("bn")) {
+        } else if (lang.equals("bn")) {
             DriverAction.click(Amazon_locators.bangla, "Bangla");
             DriverAction.click(Amazon_locators.lang_submit, "Save changes");
             DriverAction.waitSec(2);
             String eng = DriverAction.getCurrentURL();
             if (eng.contains("bn")) {
                 GemTestReporter.addTestStep("Validation", "Current page in Bangla Language<br>", STATUS.PASS);
-            }
-            else{
+            } else {
                 GemTestReporter.addTestStep("Validation", "Current page Not in Bangla Language", STATUS.FAIL);
             }
-        }else if (lang.equals("mr")) {
+        } else if (lang.equals("mr")) {
             DriverAction.click(Amazon_locators.marathi, "Marathi");
             DriverAction.click(Amazon_locators.lang_submit, "Save changes");
             DriverAction.waitSec(2);
             String eng = DriverAction.getCurrentURL();
             if (eng.contains("mr")) {
                 GemTestReporter.addTestStep("Validation", "Current page in Marathi Language<br>", STATUS.PASS);
-            }
-            else{
+            } else {
                 GemTestReporter.addTestStep("Validation", "Current page Not in Marathi Language", STATUS.FAIL);
             }
+        } else if (lang.equals("en")) {
+            DriverAction.click(Amazon_locators.English, "English");
+            DriverAction.click(Amazon_locators.lang_submit, "Save changes");
+            DriverAction.waitSec(2);
+            String eng = DriverAction.getCurrentURL();
+            if (eng.contains("en")) {
+                GemTestReporter.addTestStep("Validation", "Current page in English Language<br>", STATUS.PASS);
+            } else {
+                GemTestReporter.addTestStep("Validation", "Current page Not in English Language", STATUS.FAIL);
+            }
         }
-
 
     }
 }

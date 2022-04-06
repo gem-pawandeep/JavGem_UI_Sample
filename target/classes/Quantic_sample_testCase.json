@@ -175,6 +175,15 @@
       "id": 120,
       "Marathi": "mr"
     }
+  },
+  "validateLangChangeEnglish": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S021",
+    "inputData": {
+      "id": 121,
+      "English": "en"
+    }
   }
 
 }

@@ -213,4 +213,18 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeEnglish(JsonObject inputData) {
+        try {
+            String url = "https://www.amazon.in/?language=hi_IN";
+            DriverAction.navigateToUrl(url);
+            if (url.contains("hi")) {
+                GemTestReporter.addTestStep("Validation", "Current page in Hindi Language<br>", STATUS.PASS);
+            }
+            Amazon.validateLanguage(inputData.get("English").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
 }
