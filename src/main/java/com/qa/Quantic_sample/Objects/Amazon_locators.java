@@ -36,6 +36,10 @@ public class Amazon_locators {
     public static By all=By.xpath("//*[@class='hm-icon nav-sprite']");
     public static By echodot=By.xpath("//a[@data-menu-id='2']");
     public static By item=By.xpath("//*[@id='hmenu-content']/ul[2]/li[3]/a");
-    public static By buyNow=By.xpath("//input[@id='buy-now-button']");
-
+    public static By addToCart=By.xpath("//input[@id='add-to-cart-button']");
+    public static By cartTitle=By.xpath("//span[@class='a-truncate-cut']");
+    public static By locationButton=By.xpath("//a[@id='nav-global-location-popover-link']");
+    public static By locationText=By.xpath("//input[@class='GLUX_Full_Width a-declarative']");
+    public static By locationSubmit=By.xpath("//input[@aria-labelledby='GLUXZipUpdate-announce']");
+    public static By locationValidate=By.xpath("//span[@class='nav-line-2 nav-progressive-content']");
 }

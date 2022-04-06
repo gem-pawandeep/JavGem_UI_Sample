@@ -267,4 +267,44 @@ public class Amazon {
         GemTestReporter.addTestStep("Title",DriverAction.getElementText(Amazon_locators.tittle),STATUS.PASS);
         GemTestReporter.addTestStep("Price",DriverAction.getElementText(Amazon_locators.price),STATUS.PASS);
     }
+
+    public static void cartAfterAdding(String item){
+        Common_functions.search(item);
+        DriverAction.click(Amazon_locators.first_result,"first result");
+        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(1));
+        DriverAction.waitSec(2);
+        String temp1=DriverAction.getElementText(Amazon_locators.tittle);
+        DriverAction.click(Amazon_locators.addToCart,"Add to cart");
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.cart_icon,"Cart");
+        String temp2=DriverAction.getElementText(Amazon_locators.cartTitle);
+        if(temp1.equals(temp2)){
+            GemTestReporter.addTestStep("Validation",temp2+"added Successfully to Cart",STATUS.PASS);
+        }
+        else {
+            GemTestReporter.addTestStep("Validation","Unsuccessful",STATUS.FAIL);
+        }
+        DriverManager.closeDriver();
+        GemTestReporter.addTestStep("Action", "Control back to Previous Tab", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(0));
+    }
+
+    public static void locationValidation(String pincode){
+        DriverAction.click(Amazon_locators.locationButton,"Location Button");
+        DriverAction.waitSec(2);
+        DriverAction.typeText(Amazon_locators.locationText,pincode,"Location");
+        DriverAction.click(Amazon_locators.locationSubmit,"Apply");
+        DriverAction.waitSec(2);
+        String temp=DriverAction.getElementText(Amazon_locators.locationValidate);
+        if(temp.contains(pincode)){
+            GemTestReporter.addTestStep("Validate location",temp,STATUS.PASS);
+        }
+        else {
+            GemTestReporter.addTestStep("Validate location",temp,STATUS.PASS);
+        }
+
+
+    }
 }

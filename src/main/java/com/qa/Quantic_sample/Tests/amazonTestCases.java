@@ -31,7 +31,7 @@ public class amazonTestCases extends QuanticUIBase {
     public void loginCorrectCredentials(JsonObject inputData) {
         try {
             Amazon.SignIn(inputData.get("email").getAsString(), inputData.get("pass").getAsString());
-            DriverAction.waitSec(15);
+            DriverAction.waitSec(20);
             String url1 = DriverAction.getCurrentURL();
             String title = DriverAction.getTitleWithoutReporting(url1);
             if (title.contains("Amazon.in")) {
@@ -236,5 +236,22 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateCartAfterAdding(JsonObject inputData) {
+        try {
+            Amazon.cartAfterAdding(inputData.get("item").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLocation(JsonObject inputData) {
+        try {
+            Amazon.locationValidation(inputData.get("pincode").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
 
 }

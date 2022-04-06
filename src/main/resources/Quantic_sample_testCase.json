@@ -116,7 +116,7 @@
   "validateLangChangeHindi": {
     "runFlag": "Y",
     "category": "Test",
-    "scenarioID": "V2S013",
+    "scenarioID": "V2S015",
     "inputData": {
       "id": 114,
       "Hindi": "hi"
@@ -125,7 +125,7 @@
   "validateLangChangeTamil": {
     "runFlag": "Y",
     "category": "Test",
-    "scenarioID": "V2S013",
+    "scenarioID": "V2S015",
     "inputData": {
       "id": 115,
       "Tamil": "ta"
@@ -188,9 +188,27 @@
   "alexaDotFromLeftTreeMenu": {
     "runFlag": "Y",
     "category": "Test",
-    "scenarioID": "V2S021",
+    "scenarioID": "V2S022",
     "inputData": {
       "id": 122
+    }
+  },
+  "validateCartAfterAdding": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S023",
+    "inputData": {
+      "id": 123,
+      "item": "earphone"
+    }
+  },
+  "validateLocation": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S024",
+    "inputData": {
+      "id": 124,
+      "pincode": "281001"
     }
   }
 }
