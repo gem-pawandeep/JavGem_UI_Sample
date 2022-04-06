@@ -167,4 +167,50 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
         }
     }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeTelgu(JsonObject inputData) {
+        try {
+            Amazon.validateLanguage(inputData.get("Telgu").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeKannada(JsonObject inputData) {
+        try {
+            Amazon.validateLanguage(inputData.get("Kannada").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeMalyalam(JsonObject inputData) {
+        try {
+            Amazon.validateLanguage(inputData.get("Malyalam").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeBangla(JsonObject inputData) {
+        try {
+            Amazon.validateLanguage(inputData.get("Bangla").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateLangChangeMarathi(JsonObject inputData) {
+        try {
+            Amazon.validateLanguage(inputData.get("Marathi").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
 }

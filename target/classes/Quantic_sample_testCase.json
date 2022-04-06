@@ -14,7 +14,7 @@
     "inputData": {
       "id": 102,
       "email": "pawan27cool@gmail.com",
-      "pass": "Pawandeep28072000@"
+      "pass": "Pawandeep@"
     }
   },
   "loginIncorrectCredentials": {
@@ -130,5 +130,51 @@
       "id": 115,
       "Tamil": "ta"
     }
+  },
+  "validateLangChangeTelgu": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S016",
+    "inputData": {
+      "id": 116,
+      "Telgu": "te"
+    }
+  },
+  "validateLangChangeKannada": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S017",
+    "inputData": {
+      "id": 117,
+      "Kannada": "kn"
+    }
+  },
+  "validateLangChangeMalyalam": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S018",
+    "inputData": {
+      "id": 118,
+      "Malyalam": "ml"
+    }
+  },
+  "validateLangChangeBangla": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S019",
+    "inputData": {
+      "id": 119,
+      "Bangla": "bn"
+    }
+  },
+  "validateLangChangeMarathi": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S020",
+    "inputData": {
+      "id": 120,
+      "Marathi": "mr"
+    }
   }
+
 }

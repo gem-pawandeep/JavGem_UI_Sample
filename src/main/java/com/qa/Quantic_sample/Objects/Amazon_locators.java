@@ -26,5 +26,10 @@ public class Amazon_locators {
     public static By lang_button = By.xpath("//span[@class='icp-nav-link-inner']");
     public static By hindi = By.xpath("//*[@id='icp-language-settings']/div[3]");
     public static By tamil = By.xpath("//*[@id='icp-language-settings']/div[4]");
+    public static By telgu = By.xpath("//*[@id='icp-language-settings']/div[5]");
+    public static By Kannda = By.xpath("//*[@id='icp-language-settings']/div[6]");
+    public static By malyalam = By.xpath("//*[@id='icp-language-settings']/div[7]");
+    public static By bangla = By.xpath("//*[@id='icp-language-settings']/div[8]");
+    public static By marathi = By.xpath("//*[@id='icp-language-settings']/div[9]");
     public static By lang_submit = By.xpath("//input[@aria-labelledby='icp-save-button-announce']");
 }
