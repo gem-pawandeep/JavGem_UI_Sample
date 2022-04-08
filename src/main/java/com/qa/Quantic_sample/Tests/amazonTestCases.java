@@ -27,6 +27,8 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+
+
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void loginCorrectCredentials(JsonObject inputData) {
         try {
@@ -254,4 +256,201 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationAustralia(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Australia,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationBrazil(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Brazil,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationCanada(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Canada,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationChina(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.china,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationFrance(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.France,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationGermany(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Germany,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationItaly(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Itlay,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationJapan(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Japan,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationMexico(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Mexico,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationNetherlands(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Netherlands,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationPoland(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Poland,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationSingapore(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Singapore,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationSpain(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Spain,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationTurkey(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.Turkey,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationUAE(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.UAE,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationUK(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.UK,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validationUS(JsonObject inputData) {
+        try {
+            Amazon.countryValidation(inputData.get("Country").getAsString(),Amazon_locators.US,inputData.get("Name").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void customPriceFilter(JsonObject inputData){
+        try {
+            Amazon.priceFilter(inputData.get("item").getAsString(),inputData.get("low").getAsString(),inputData.get("high").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void addRemoveCart(JsonObject inputData){
+        try {
+            Amazon.addItemRemove(inputData.get("item").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateCartAfterNavigating(JsonObject inputData) {
+        try {
+            Amazon.cartValidateAfterNavigate(inputData.get("item").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validatePincodeAfterNavigate(JsonObject inputData) {
+        try {
+            Amazon.picodeValidation(inputData.get("pincode").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void validateCountCartItems(JsonObject inputData) {
+        try {
+            Amazon.validateCount(inputData.get("item").getAsString(),inputData.get("item2").getAsString());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL);
+        }
+    }
 }

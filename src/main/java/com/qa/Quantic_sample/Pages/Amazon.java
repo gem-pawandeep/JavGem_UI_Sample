@@ -9,6 +9,7 @@ import com.qa.gemini.quartzReporting.STATUS;
 import org.openqa.selenium.By;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class Amazon {
     public static void ValidatingUrl() {
@@ -31,8 +32,9 @@ public class Amazon {
         ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
         GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
+        DriverAction.waitSec(2);
         GemTestReporter.addTestStep("Title of first Result", DriverAction.getElementText(Amazon_locators.tittle), STATUS.PASS);
-        GemTestReporter.addTestStep("Price of first Result", "Rs " + DriverAction.getElementText(Amazon_locators.price1), STATUS.PASS);
+        GemTestReporter.addTestStep("Price of first Result", DriverAction.getElementText(Amazon_locators.price1), STATUS.PASS);
         GemTestReporter.addTestStep("Action", "Closing the Current Tab", STATUS.PASS);
         DriverManager.closeDriver();
         GemTestReporter.addTestStep("Action", "Control back to Previous Tab", STATUS.PASS);
@@ -41,7 +43,9 @@ public class Amazon {
 
     public static void lowToHigh(String item) {
         Common_functions.search(item);
+        DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
+        DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.low_high, "low to high");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.first_result, "First result");
@@ -70,7 +74,9 @@ public class Amazon {
 
     public static void highToLow(String item) {
         Common_functions.search(item);
+        DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
+        DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.high_low, "high to low");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.first_result, "First result");
@@ -277,11 +283,15 @@ public class Amazon {
         DriverAction.waitSec(2);
         String temp1=DriverAction.getElementText(Amazon_locators.tittle);
         DriverAction.click(Amazon_locators.addToCart,"Add to cart");
-        DriverAction.waitSec(2);
+        DriverAction.waitSec(3);
+        DriverAction.navigateRefresh();
         DriverAction.click(Amazon_locators.cart_icon,"Cart");
+        DriverAction.navigateRefresh();
         String temp2=DriverAction.getElementText(Amazon_locators.cartTitle);
-        if(temp1.equals(temp2)){
-            GemTestReporter.addTestStep("Validation",temp2+"added Successfully to Cart",STATUS.PASS);
+        String a=temp1.substring(0,30);
+        String b=temp2.substring(0,30);
+        if(a.equals(b)){
+            GemTestReporter.addTestStep("Validation",temp1+"added Successfully to Cart",STATUS.PASS);
         }
         else {
             GemTestReporter.addTestStep("Validation","Unsuccessful",STATUS.FAIL);
@@ -293,18 +303,149 @@ public class Amazon {
 
     public static void locationValidation(String pincode){
         DriverAction.click(Amazon_locators.locationButton,"Location Button");
-        DriverAction.waitSec(2);
+        DriverAction.waitSec(3);
         DriverAction.typeText(Amazon_locators.locationText,pincode,"Location");
-        DriverAction.click(Amazon_locators.locationSubmit,"Apply");
         DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.locationSubmit,"Apply");
+        DriverAction.waitSec(3);
         String temp=DriverAction.getElementText(Amazon_locators.locationValidate);
         if(temp.contains(pincode)){
             GemTestReporter.addTestStep("Validate location",temp,STATUS.PASS);
         }
         else {
-            GemTestReporter.addTestStep("Validate location",temp,STATUS.PASS);
+            GemTestReporter.addTestStep("Validate location",temp,STATUS.FAIL);
         }
-
-
     }
+
+    public static void countryValidation(String verify,By xpath,String name){
+        DriverAction.click(xpath,name);
+        DriverAction.waitSec(2);
+        String s=DriverAction.getCurrentURL();
+        if(s.contains(verify)){
+            GemTestReporter.addTestStep("Validate Country",name,STATUS.PASS);
+        }
+        else{
+            GemTestReporter.addTestStep("Validate Country ",name,STATUS.FAIL);
+        }
+    }
+
+    public static void priceFilter(String item,String low,String high){
+        Common_functions.search(item);
+        DriverAction.waitSec(2);
+        DriverAction.typeText(Amazon_locators.lowPrice,low,"Minimum Price");
+        DriverAction.typeText(Amazon_locators.highPrice,high,"Maximum Price");
+        DriverAction.click(Amazon_locators.Go,"Go");
+        DriverAction.waitSec(2);
+        int temp1=Integer.parseInt(low);
+        int temp2=Integer.parseInt(high);
+        String price=DriverAction.getElementText(Amazon_locators.onScreenFirstResult);
+        price=price.replace(",","");
+        int pcs=Integer.parseInt(price);
+        if(pcs>temp1 && pcs<temp2){
+            GemTestReporter.addTestStep("Validation Successful","Price of "+DriverAction.getElementText(Amazon_locators.onScreenFirstResultName)+" is between "+low+"-"+high,STATUS.PASS);
+        }
+        else {
+            GemTestReporter.addTestStep("Validation Failed","Price of "+ DriverAction.getElementText(Amazon_locators.onScreenFirstResultName)+ " is not between "+low+"-"+high,STATUS.FAIL);
+        }
+    }
+
+    public static void addItemRemove(String item){
+        Common_functions.search(item);
+        DriverAction.click(Amazon_locators.first_result,"first result");
+        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(1));
+        DriverAction.waitSec(2);
+        String temp1=DriverAction.getElementText(Amazon_locators.tittle);
+        DriverAction.click(Amazon_locators.addToCart,"Add to cart");
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.cart_icon,"Cart");
+        String temp2=DriverAction.getElementText(Amazon_locators.cartTitle);
+        String a=temp1.substring(0,30);
+        String b=temp2.substring(0,30);
+        if(a.equals(b)){
+            GemTestReporter.addTestStep("Validation",temp1+"added Successfully to Cart",STATUS.PASS);
+        }
+        else {
+            GemTestReporter.addTestStep("Validation","Unsuccessful",STATUS.FAIL);
+        }
+        DriverAction.click(Amazon_locators.cartDrpDwn,"QTY");
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.cartDel,"Delete");
+        DriverAction.waitSec(2);
+        String s = DriverAction.getElementText(Amazon_locators.emptyCart);
+        if (s.contains("is empty")) {
+            GemTestReporter.addTestStep("Validating Cart", "Cart is Empty", STATUS.PASS);
+        } else {
+            GemTestReporter.addTestStep("Validating Cart", "Cart is Not Empty", STATUS.PASS);
+        }
+        DriverManager.closeDriver();
+        GemTestReporter.addTestStep("Action", "Control back to Previous Tab", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(0));
+    }
+
+    public static void cartValidateAfterNavigate(String item){
+        Common_functions.search(item);
+        DriverAction.click(Amazon_locators.first_result,"first result");
+        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(1));
+        DriverAction.waitSec(2);
+        String temp1=DriverAction.getElementText(Amazon_locators.tittle);
+        DriverAction.click(Amazon_locators.addToCart,"Add to cart");
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.cart_icon,"Cart");
+        String temp2=DriverAction.getElementText(Amazon_locators.cartTitle);
+        String a=temp1.substring(0,30);
+        String b=temp2.substring(0,30);
+        String verify="";
+        if(a.equals(b)){
+            GemTestReporter.addTestStep("Validation",temp1+" added Successfully to Cart",STATUS.PASS);
+            verify=temp1;
+        }
+        else {
+            GemTestReporter.addTestStep("Validation","Unsuccessful to add",STATUS.FAIL);
+        }
+        DriverAction.navigateToUrl("https://www.google.com/");
+        DriverAction.waitSec(2);
+        DriverAction.navigateBack();
+        DriverAction.waitSec(2);
+        String temp11=verify.substring(0,30);
+        String temp22=DriverAction.getElementText(Amazon_locators.cartTitle);
+        String temp222=temp22.substring(0,30);
+        if(temp11.equals(temp222)){
+            GemTestReporter.addTestStep("Validation",verify+" is present in Cart",STATUS.PASS);
+        }
+        else {
+            GemTestReporter.addTestStep("Validation",verify+" is not present in Cart",STATUS.FAIL);
+        }
+        DriverManager.closeDriver();
+        DriverAction.switchToWindow(newTb.get(0));
+        GemTestReporter.addTestStep("Action", "Switching control to Previous Tab", STATUS.PASS);
+    }
+
+    public static void picodeValidation(String pincode){
+        locationValidation(pincode);
+        DriverAction.navigateToUrl("https://www.google.com/");
+        DriverAction.waitSec(2);
+        DriverAction.navigateBack();
+        DriverAction.waitSec(2);
+        String temp1=DriverAction.getElementText(Amazon_locators.locationValidate);
+        if(temp1.contains(pincode)){
+            GemTestReporter.addTestStep("Validate location after navigating",temp1,STATUS.PASS);
+        }
+        else {
+            GemTestReporter.addTestStep("Validate location after navigating",temp1,STATUS.FAIL);
+        }
+    }
+
+    public static void validateCount(String item,String item2){
+        cartAfterAdding(item);
+        DriverAction.navigateBack();
+        cartAfterAdding(item2);
+        DriverAction.navigateRefresh();
+        String count=DriverAction.getElementText(Amazon_locators.cartCount);
+        GemTestReporter.addTestStep("Total items present in Cart",count,STATUS.PASS);
+    }
+
 }
