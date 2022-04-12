@@ -68,4 +68,9 @@ public class Amazon_locators {
     public static By cartDrpDwn=By.xpath("//span[@class='a-button-text a-declarative']");
     public static By cartDel=By.xpath("//a[@id='quantity_0']");
     public static By cartCount=By.xpath("//span[@id='nav-cart-count']");
+    public static By payOnDelivery=By.xpath("//*[@id='p_g_shipping_options_group/4931671031']//span");
+    public static By backToTop=By.xpath("//span[@class='navFooterBackToTopText']");
+    public static By newRelease=By.xpath("//*[@data-csa-c-slot-id='nav_cs_7']");
+    public static By Bestsellers=By.xpath("//*[@class='_p13n-zg-nav-tab-all_style_zg-tabs-li-div__1YdPR']");
+    public static By toprelease=By.xpath("//*[@id='anonCarousel1']//li[1]//a[1]/div");
 }

@@ -14,7 +14,7 @@
     "inputData": {
       "id": 102,
       "email": "pawan27cool@gmail.com",
-      "pass": "Pawandeep@"
+      "pass": "Pawandeep28072000@"
     }
   },
   "loginIncorrectCredentials": {
@@ -199,7 +199,7 @@
     "scenarioID": "V2S023",
     "inputData": {
       "id": 123,
-      "item": "earphone"
+      "item": "mixer"
     }
   },
   "validateLocation": {
@@ -407,7 +407,7 @@
     "scenarioID": "V2S044",
     "inputData": {
       "id": 144,
-      "item": "earphones"
+      "item": "mixer"
     }
   },
   "validatePincodeAfterNavigate": {
@@ -427,6 +427,39 @@
       "id": 146,
       "item": "earphone",
       "item2": "mixer"
+    }
+  },
+  "viewPayOnDelivery": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S047",
+    "inputData": {
+      "id": 147,
+      "item": "earphone"
+    }
+  },
+  "clickBackToTop": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S048",
+    "inputData": {
+      "id": 148
+    }
+  },
+  "newReleaseNo1": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S049",
+    "inputData": {
+      "id": 149
+    }
+  },
+  "bestSellerNo1": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S050",
+    "inputData": {
+      "id": 150
     }
   }
 }
