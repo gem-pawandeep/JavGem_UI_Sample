@@ -20,7 +20,6 @@ public class amazonTestCases extends QuanticUIBase {
 
         }
         */
-
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void launchedAmazon(JsonObject inputData) {
         try {
