@@ -363,12 +363,11 @@ public class Amazon {
         String a = temp1.substring(0, 30);
         String b = temp2.substring(0, 30);
         if (a.equals(b)) {
-            GemTestReporter.addTestStep("Validation", temp1 + "added Successfully to Cart", STATUS.PASS,takeSnapShotBase64());
+            GemTestReporter.addTestStep("Validation", temp1 + " added Successfully to Cart", STATUS.PASS,takeSnapShotBase64());
         } else {
             GemTestReporter.addTestStep("Validation", "Unsuccessful", STATUS.FAIL,takeSnapShotBase64());
         }
-        DriverAction.click(Amazon_locators.cartDrpDwn, "QTY");
-        DriverAction.waitSec(2);
+        DriverAction.navigateRefresh();
         DriverAction.click(Amazon_locators.cartDel, "Delete");
         DriverAction.waitSec(2);
         String s = DriverAction.getElementText(Amazon_locators.emptyCart);
@@ -380,6 +379,7 @@ public class Amazon {
         DriverManager.closeDriver();
         GemTestReporter.addTestStep("Action", "Control back to Previous Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(0));
+        DriverManager.closeDriver();
     }
 
     public static void cartValidateAfterNavigate(String item) {
