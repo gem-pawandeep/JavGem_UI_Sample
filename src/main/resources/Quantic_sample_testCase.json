@@ -407,7 +407,7 @@
     "scenarioID": "V2S044",
     "inputData": {
       "id": 144,
-      "item": "mixer"
+      "item": "charger"
     }
   },
   "validatePincodeAfterNavigate": {
@@ -426,10 +426,10 @@
     "inputData": {
       "id": 146,
       "item": "earphone",
-      "item2": "mixer"
+      "item2": "charger"
     }
   },
-  "viewPayOnDelivery": {
+  "addTwoSameItems": {
     "runFlag": "Y",
     "category": "Test",
     "scenarioID": "V2S047",

@@ -32,7 +32,7 @@ public class Amazon {
     public static void firstResultPrice(String item) {
         Common_functions.search(item);
         DriverAction.click(Amazon_locators.first_result, "First result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         DriverAction.waitSec(2);
@@ -54,7 +54,7 @@ public class Amazon {
         DriverAction.click(Amazon_locators.first_result, "First result");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.second_result, "Second result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(2));
         int price2 = Integer.parseInt(DriverAction.getElementText(Amazon_locators.price));
@@ -85,7 +85,7 @@ public class Amazon {
         DriverAction.click(Amazon_locators.first_result, "First result");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.second_result, "Second result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(2));
         String temp = DriverAction.getElementText(Amazon_locators.price);
@@ -120,7 +120,7 @@ public class Amazon {
         DriverAction.click(Amazon_locators.high_low, "high to low");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.first_result, "result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.waitSec(2);
         DriverAction.switchToWindow(newTb.get(1));
@@ -137,7 +137,7 @@ public class Amazon {
         DriverAction.click(Amazon_locators.low_high, "low to high");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.first_result, "result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         GemTestReporter.addTestStep("Result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS,takeSnapShotBase64());
@@ -152,7 +152,7 @@ public class Amazon {
         DriverAction.click(Amazon_locators.high_low, "high to low");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.first_result, "First result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         String temp = DriverAction.getElementText(Amazon_locators.price);
@@ -166,7 +166,7 @@ public class Amazon {
         DriverAction.click(Amazon_locators.low_high, "low to high");
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.first_result, "First result");
-        ArrayList<String> newTb1 = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb1 = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
         DriverAction.switchToWindow(newTb1.get(1));
         String temp1 = DriverAction.getElementText(Amazon_locators.price);
@@ -273,14 +273,14 @@ public class Amazon {
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.item, "Echo Dot");
         DriverAction.waitSec(2);
-        GemTestReporter.addTestStep("Title", DriverAction.getElementText(Amazon_locators.tittle), STATUS.PASS,takeSnapShotBase64());
+        GemTestReporter.addTestStep("Title", DriverAction.getElementText(Amazon_locators.tittle), STATUS.PASS);
         GemTestReporter.addTestStep("Price", DriverAction.getElementText(Amazon_locators.price), STATUS.PASS);
     }
 
     public static void cartAfterAdding(String item) {
         Common_functions.search(item);
         DriverAction.click(Amazon_locators.first_result, "first result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         DriverAction.waitSec(2);
@@ -323,7 +323,7 @@ public class Amazon {
         DriverAction.waitSec(2);
         String s = DriverAction.getCurrentURL();
         if (s.contains(verify)) {
-            GemTestReporter.addTestStep("Validate Country", name, STATUS.PASS,takeSnapShotBase64());
+            GemTestReporter.addTestStep("Validate Country", name, STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Validate Country ", name, STATUS.FAIL,takeSnapShotBase64());
         }
@@ -350,42 +350,32 @@ public class Amazon {
 
     public static void addItemRemove(String item) {
         Common_functions.search(item);
-        DriverAction.click(Amazon_locators.first_result, "first result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
-        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.first_result,"result");
+        ArrayList<String> newTb= new ArrayList<>(DriverAction.getWindowHandles());
         DriverAction.switchToWindow(newTb.get(1));
-        DriverAction.waitSec(2);
-        String temp1 = DriverAction.getElementText(Amazon_locators.tittle);
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
+        DriverAction.waitSec(3);
         DriverAction.click(Amazon_locators.addToCart, "Add to cart");
-        DriverAction.waitSec(2);
-        DriverAction.click(Amazon_locators.cart_icon, "Cart");
-        String temp2 = DriverAction.getElementText(Amazon_locators.cartTitle);
-        String a = temp1.substring(0, 30);
-        String b = temp2.substring(0, 30);
-        if (a.equals(b)) {
-            GemTestReporter.addTestStep("Validation", temp1 + " added Successfully to Cart", STATUS.PASS,takeSnapShotBase64());
-        } else {
-            GemTestReporter.addTestStep("Validation", "Unsuccessful", STATUS.FAIL,takeSnapShotBase64());
-        }
         DriverAction.navigateRefresh();
-        DriverAction.click(Amazon_locators.cartDel, "Delete");
+        DriverAction.click(Amazon_locators.cart_icon, "Cart");
         DriverAction.waitSec(2);
-        String s = DriverAction.getElementText(Amazon_locators.emptyCart);
-        if (s.contains("is empty")) {
-            GemTestReporter.addTestStep("Validating Cart", "Cart is Empty", STATUS.PASS,takeSnapShotBase64());
-        } else {
-            GemTestReporter.addTestStep("Validating Cart", "Cart is Not Empty", STATUS.PASS,takeSnapShotBase64());
+        DriverAction.click(Amazon_locators.cartDel,"Delete");
+        DriverAction.navigateRefresh();
+        String s=DriverAction.getElementText(Amazon_locators.cartCount);
+        if(s.equals("0")){
+            GemTestReporter.addTestStep("Validate","Cart is Empty",STATUS.PASS,takeSnapShotBase64());
+        }else{
+            GemTestReporter.addTestStep("Validate","Cart is not Empty",STATUS.FAIL,takeSnapShotBase64());
         }
         DriverManager.closeDriver();
-        GemTestReporter.addTestStep("Action", "Control back to Previous Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(0));
-        DriverManager.closeDriver();
     }
 
     public static void cartValidateAfterNavigate(String item) {
         Common_functions.search(item);
         DriverAction.click(Amazon_locators.first_result, "first result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         DriverAction.waitSec(2);
@@ -435,29 +425,61 @@ public class Amazon {
     }
 
     public static void validateCount(String item, String item2) {
-        cartAfterAdding(item);
+        Common_functions.search(item);
+        DriverAction.click(Amazon_locators.first_result, "first result");
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
+        DriverAction.switchToWindow(newTb.get(1));
+        DriverAction.waitSec(2);
+        String temp1 = DriverAction.getElementText(Amazon_locators.tittle);
+        DriverAction.click(Amazon_locators.addToCart, "Add to cart");
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Action",temp1 + " Successfully added in Cart",STATUS.PASS);
+        DriverAction.click(Amazon_locators.cart_icon, "Cart");
+        DriverAction.navigateRefresh();
+        DriverManager.closeDriver();
+        DriverAction.switchToWindow(newTb.get(0));
         DriverAction.navigateBack();
-        cartAfterAdding(item2);
+        Common_functions.search(item2);
+        DriverAction.click(Amazon_locators.first_result, "first result");
+        ArrayList<String> newTb1 = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
+        DriverAction.switchToWindow(newTb1.get(1));
+        DriverAction.waitSec(2);
+        String temp2 = DriverAction.getElementText(Amazon_locators.tittle);
+        DriverAction.click(Amazon_locators.addToCart, "Add to cart");
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Action",temp2 + " Successfully added in Cart",STATUS.PASS);
+        DriverAction.click(Amazon_locators.cart_icon, "Cart");
         DriverAction.navigateRefresh();
         String count = DriverAction.getElementText(Amazon_locators.cartCount);
-        GemTestReporter.addTestStep("Total items present in Cart", count, STATUS.PASS,takeSnapShotBase64());
+        GemTestReporter.addTestStep("Total items present in Cart", "1: "+temp1+"<br>"+"2: "+temp2+"<br>"+"Count: "+count, STATUS.PASS,takeSnapShotBase64());
+        DriverManager.closeDriver();
+        DriverAction.switchToWindow(newTb1.get(0));
     }
 
-    public static void payOndly(String item) {
+    public static void totalCountSameItem(String item) {
         Common_functions.search(item);
         DriverAction.waitSec(2);
-        DriverAction.click(Amazon_locators.payOnDelivery, "Pay On Delivery");
-        DriverAction.waitSec(2);
-        DriverAction.click(Amazon_locators.first_result, "first result");
-        ArrayList<String> newTb = new ArrayList<>(DriverManager.getWebDriver().getWindowHandles());
-        GemTestReporter.addTestStep("Control transfer to new tab", "Successful", STATUS.PASS);
-        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.first_result,"result");
+        ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
-        GemTestReporter.addTestStep("Result", "Name:" + DriverAction.getElementText(Amazon_locators.tittle) + "<br>Price:" + DriverAction.getElementText(Amazon_locators.price), STATUS.PASS,takeSnapShotBase64());
-        DriverManager.closeDriver();
-        GemTestReporter.addTestStep("Control transfer to previous tab", "Successful", STATUS.PASS);
+        DriverAction.click(Amazon_locators.addToCart,"Add to cart");
+        DriverAction.navigateRefresh();
+        DriverAction.click(Amazon_locators.cart_icon,"cart");
         DriverAction.waitSec(2);
+        String temp2 = DriverAction.getElementText(Amazon_locators.cartTitle);
+        DriverAction.click(Amazon_locators.cartDrpDwn,"drop-down");
+        DriverAction.waitSec(2);
+        DriverAction.click(Amazon_locators.Quantity,"2");
+        DriverAction.navigateRefresh();
+        DriverAction.waitSec(2);
+        String count = DriverAction.getElementText(Amazon_locators.cartCount);
+        GemTestReporter.addTestStep("Total items present in Cart", temp2+"<br>" +count, STATUS.PASS,takeSnapShotBase64());
+        DriverManager.closeDriver();
         DriverAction.switchToWindow(newTb.get(0));
+        GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
     }
 
     public static void backTop() {
@@ -476,4 +498,5 @@ public class Amazon {
         DriverAction.click(Amazon_locators.toprelease, "#1");
         GemTestReporter.addTestStep("Product Title", DriverAction.getElementText(Amazon_locators.tittle) + "<br>" + DriverAction.getElementText(Amazon_locators.price1), STATUS.PASS,takeSnapShotBase64());
     }
+
 }

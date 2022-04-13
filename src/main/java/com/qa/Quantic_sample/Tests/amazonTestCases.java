@@ -455,9 +455,9 @@ public class amazonTestCases extends QuanticUIBase {
     }
 
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
-    public void viewPayOnDelivery(JsonObject inputData) {
+    public void addTwoSameItems(JsonObject inputData) {
         try {
-            Amazon.payOndly(inputData.get("item").getAsString());
+            Amazon.totalCountSameItem(inputData.get("item").getAsString());
         } catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,takeSnapShotBase64());
         }
