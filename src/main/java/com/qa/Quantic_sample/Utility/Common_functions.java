@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 
 import java.io.IOException;
 
-import static com.gemini.automation.generic.DriverAction.takeSnapShotBase64;
 
 public class Common_functions {
     public static void search(String item) throws IOException {

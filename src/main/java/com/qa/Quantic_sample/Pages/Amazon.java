@@ -24,10 +24,20 @@ public class Amazon {
         } else {
             GemTestReporter.addTestStep("Validating URL", "Expected: Amazon.in<br>Current: " + DriverAction.getTitle(DriverAction.getCurrentURL()), STATUS.FAIL,DriverAction.takeSnapShot());
         }
+        DriverAction.minimizeBrowser();
+        GemTestReporter.addTestStep("action","Minimize browser",STATUS.PASS);
+        DriverAction.waitSec(2);
+        DriverAction.maximizeBrowser();
+        GemTestReporter.addTestStep("action","Maximize browser",STATUS.PASS);
+        GemTestReporter.addTestStep("Size of browser",DriverAction.getBrowserSize().toString(),STATUS.PASS);
+        DriverAction.setBrowserSize(1200,644,true);
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Browser Location",DriverAction.getBrowserLocation().toString(),STATUS.PASS);
     }
 
     public static void SignIn(String email, String pass) throws IOException {
         Common_functions.signInAmazon(email, pass);
+
     }
 
     public static void firstResultPrice(String item) throws IOException {
@@ -113,6 +123,17 @@ public class Amazon {
 
     public static void validateHyperlink(By link, String item) throws IOException {
         Common_functions.hyperLinkValidation(link, item);
+        DriverAction.minimizeBrowser();
+        GemTestReporter.addTestStep("action","Minimize browser",STATUS.PASS);
+        DriverAction.waitSec(2);
+        DriverAction.maximizeBrowser();
+        GemTestReporter.addTestStep("action","Maximize browser",STATUS.PASS);
+        GemTestReporter.addTestStep("Size of browser",DriverAction.getBrowserSize().toString(),STATUS.PASS);
+        DriverAction.setBrowserSize(1200,644,true);
+        DriverAction.waitSec(2);
+        DriverAction.setBrowserSize(1200,644,true);
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Browser Location",DriverAction.getBrowserLocation().toString(),STATUS.PASS);
     }
 
     public static void maxPrice(String item) throws IOException {
@@ -328,6 +349,15 @@ public class Amazon {
         } else {
             GemTestReporter.addTestStep("Validate Country ", name, STATUS.FAIL,DriverAction.takeSnapShot());
         }
+        DriverAction.minimizeBrowser();
+        GemTestReporter.addTestStep("action","Minimize browser",STATUS.PASS);
+        DriverAction.waitSec(2);
+        DriverAction.maximizeBrowser();
+        GemTestReporter.addTestStep("action","Maximize browser",STATUS.PASS);
+        GemTestReporter.addTestStep("Size of browser",DriverAction.getBrowserSize().toString(),STATUS.PASS);
+        DriverAction.setBrowserSize(1200,644,true);
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Browser Location",DriverAction.getBrowserLocation().toString(),STATUS.PASS);
     }
 
     public static void priceFilter(String item, String low, String high) throws IOException {
@@ -394,9 +424,13 @@ public class Amazon {
         } else {
             GemTestReporter.addTestStep("Validation", "Unsuccessful to add", STATUS.FAIL,DriverAction.takeSnapShot());
         }
-        DriverAction.navigateToUrl("https://www.google.com/");
+        DriverAction.navigateToUrl("https://www.google.com/",true);
         DriverAction.waitSec(2);
-        DriverAction.navigateBack();
+        DriverAction.navigateBack(true);
+        DriverAction.waitSec(2);
+        DriverAction.navigateForward(true);
+        DriverAction.waitSec(2);
+        DriverAction.navigateBack(true);
         DriverAction.waitSec(2);
         String temp11 = verify.substring(0, 30);
         String temp22 = DriverAction.getElementText(Amazon_locators.cartTitle);
@@ -414,6 +448,10 @@ public class Amazon {
     public static void picodeValidation(String pincode) throws IOException {
         locationValidation(pincode);
         DriverAction.navigateToUrl("https://www.google.com/");
+        DriverAction.waitSec(2);
+        DriverAction.navigateBack();
+        DriverAction.waitSec(2);
+        DriverAction.navigateForward(true);
         DriverAction.waitSec(2);
         DriverAction.navigateBack();
         DriverAction.waitSec(2);
@@ -499,5 +537,6 @@ public class Amazon {
         DriverAction.click(Amazon_locators.toprelease, "#1");
         GemTestReporter.addTestStep("Product Title", DriverAction.getElementText(Amazon_locators.tittle) + "<br>" + DriverAction.getElementText(Amazon_locators.price1), STATUS.PASS,DriverAction.takeSnapShot());
     }
+
 
 }

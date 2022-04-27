@@ -6,11 +6,15 @@ import com.gemini.automation.generic.QuanticUIBase;
 import com.google.gson.JsonObject;
 import com.qa.Quantic_sample.Objects.Amazon_locators;
 import com.qa.Quantic_sample.Pages.Amazon;
+import com.qa.Quantic_sample.Utility.Common_functions;
 import com.qa.gemini.quartzReporting.GemTestReporter;
 import com.qa.gemini.quartzReporting.STATUS;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 public class amazonTestCases extends QuanticUIBase {
     /*
@@ -488,5 +492,47 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void getElementsFunctionality(JsonObject inputData) throws IOException {
+        try {
+            Common_functions.search(inputData.get("item").getAsString());
+            DriverAction.click(Amazon_locators.pricedrpdwn,"dropdown");
+            List<WebElement> elements = DriverAction.getElements(Amazon_locators.drpdwn);
+            GemTestReporter.addTestStep("Number of elements:",""+elements.size(),STATUS.PASS);
+            for (int i=0; i<elements.size();i++){
+                GemTestReporter.addTestStep("dropdown buttons text:",DriverAction.getAttributeName(elements.get(i),"aria-labelledby"),STATUS.PASS);
+            }
+            GemTestReporter.addTestStep("Current Window Handle:",DriverAction.getWindowHandle(),STATUS.PASS);
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void getElementsTextFunctionality(JsonObject inputData) throws IOException {
+        try {
+            Common_functions.search(inputData.get("item").getAsString());
+            DriverAction.click(Amazon_locators.pricedrpdwn,"dropdown");
+            List<String>elements=DriverAction.getElementsText(Amazon_locators.drpdwn);
+            for (int i=0;i<elements.size();i++){
+                GemTestReporter.addTestStep("Dropdowns:",elements.get(i),STATUS.PASS);
+            }
+            GemTestReporter.addTestStep("Current Window Handle:",DriverAction.getWindowHandle(),STATUS.PASS);
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void amazonPageSource(JsonObject inputData) throws IOException {
+        try {
+          //  GemTestReporter.addTestStep("Page Source",DriverAction.getPageSource(),STATUS.PASS);
+            System.out.println(DriverAction.getPageSource());
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
 
 }

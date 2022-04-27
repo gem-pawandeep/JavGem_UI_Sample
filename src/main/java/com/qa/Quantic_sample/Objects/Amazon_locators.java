@@ -74,6 +74,7 @@ public class Amazon_locators {
     public static By Bestsellers=By.xpath("//*[@class='_p13n-zg-nav-tab-all_style_zg-tabs-li-div__1YdPR']");
     public static By toprelease=By.xpath("//*[@id='anonCarousel1']//li[1]//a[1]/div");
     public static By Quantity=By.xpath("//*[@id='quantity_2']");
+    public static By drpdwn=By.xpath("//*[@class='a-dropdown-item']");
 }
 
 

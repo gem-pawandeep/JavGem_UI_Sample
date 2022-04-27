@@ -461,5 +461,31 @@
     "inputData": {
       "id": 150
     }
+  },
+  "getElementsFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S051",
+    "inputData": {
+      "id": 151,
+      "item": "earphones"
+    }
+  },
+  "getElementsTextFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S052",
+    "inputData": {
+      "id": 152,
+      "item": "earphones"
+    }
+  },
+  "amazonPageSource": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S053",
+    "inputData": {
+      "id": 153
+    }
   }
 }
