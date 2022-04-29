@@ -199,7 +199,7 @@
     "scenarioID": "V2S023",
     "inputData": {
       "id": 123,
-      "item": "earphones"
+      "item": "charger"
     }
   },
   "validateLocation": {
@@ -398,7 +398,7 @@
     "scenarioID": "V2S043",
     "inputData": {
       "id": 143,
-      "item": "earphones"
+      "item": "charger"
     }
   },
   "validateCartAfterNavigating":{
@@ -486,6 +486,33 @@
     "scenarioID": "V2S053",
     "inputData": {
       "id": 153
+    }
+  },
+  "getCSSValueFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S054",
+    "inputData": {
+      "id": 154
+    }
+  },
+  "iframeFunctionalities": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S055",
+    "inputData": {
+      "id": 155,
+      "url": "https://demoqa.com/frames"
+    }
+  },
+  "alertFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S056",
+    "inputData": {
+      "id": 156,
+      "name":" PawanDeep",
+      "url": "https://the-internet.herokuapp.com/javascript_alerts"
     }
   }
 }

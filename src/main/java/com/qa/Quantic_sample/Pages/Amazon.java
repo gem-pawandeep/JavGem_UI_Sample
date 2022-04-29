@@ -20,7 +20,7 @@ public class Amazon {
         String s = "";
         s = DriverAction.getTitle(DriverAction.getCurrentURL());
         if (s.contains("Amazon.in")) {
-            GemTestReporter.addTestStep("Validating URL", "Expected: Amazon.in<br>Current: Amazon.in", STATUS.PASS,DriverAction.takeSnapShot());
+            GemTestReporter.addTestStep("Validating URL", "Expected: Amazon.in<br>Current: Amazon.in", STATUS.PASS,takeSnapShotBase64());
         } else {
             GemTestReporter.addTestStep("Validating URL", "Expected: Amazon.in<br>Current: " + DriverAction.getTitle(DriverAction.getCurrentURL()), STATUS.FAIL,DriverAction.takeSnapShot());
         }
@@ -42,6 +42,9 @@ public class Amazon {
 
     public static void firstResultPrice(String item) throws IOException {
         Common_functions.search(item);
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         DriverAction.click(Amazon_locators.first_result, "First result");
         ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
@@ -57,6 +60,9 @@ public class Amazon {
 
     public static void lowToHigh(String item) throws IOException {
         Common_functions.search(item);
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
         DriverAction.waitSec(2);
@@ -88,6 +94,9 @@ public class Amazon {
 
     public static void highToLow(String item) throws IOException {
         Common_functions.search(item);
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         DriverAction.waitSec(2);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
         DriverAction.waitSec(2);
@@ -138,6 +147,9 @@ public class Amazon {
 
     public static void maxPrice(String item) throws IOException {
         Common_functions.search(item);
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
         DriverAction.click(Amazon_locators.high_low, "high to low");
         DriverAction.waitSec(2);
@@ -155,6 +167,9 @@ public class Amazon {
 
     public static void minPrice(String item) throws IOException {
         Common_functions.search(item);
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
         DriverAction.click(Amazon_locators.low_high, "low to high");
         DriverAction.waitSec(2);
@@ -170,6 +185,9 @@ public class Amazon {
 
     public static void diffMaxMin(String item) throws IOException {
         Common_functions.search(item);
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         DriverAction.click(Amazon_locators.pricedrpdwn, "Sort by:");
         DriverAction.click(Amazon_locators.high_low, "high to low");
         DriverAction.waitSec(2);
@@ -526,13 +544,13 @@ public class Amazon {
     }
 
     public static void newReleaseClick() throws IOException {
+        DriverAction.click(Amazon_locators.Bestsellers, "Bestsellers");
         DriverAction.click(Amazon_locators.newRelease, "New Release");
         DriverAction.click(Amazon_locators.toprelease, "#1");
         GemTestReporter.addTestStep("Product Title", DriverAction.getElementText(Amazon_locators.tittle) + "<br>" + DriverAction.getElementText(Amazon_locators.price1), STATUS.PASS,DriverAction.takeSnapShot());
     }
 
     public static void bestSellerClick() throws IOException {
-        DriverAction.click(Amazon_locators.newRelease, "New Release");
         DriverAction.click(Amazon_locators.Bestsellers, "Bestsellers");
         DriverAction.click(Amazon_locators.toprelease, "#1");
         GemTestReporter.addTestStep("Product Title", DriverAction.getElementText(Amazon_locators.tittle) + "<br>" + DriverAction.getElementText(Amazon_locators.price1), STATUS.PASS,DriverAction.takeSnapShot());

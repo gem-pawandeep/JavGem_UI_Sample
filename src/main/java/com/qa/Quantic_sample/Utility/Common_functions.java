@@ -11,6 +11,8 @@ import java.io.IOException;
 
 public class Common_functions {
     public static void search(String item) throws IOException {
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         GemTestReporter.addTestStep("Action","Click on Search Box",STATUS.PASS,DriverAction.takeSnapShot());
         DriverAction.typeText(Amazon_locators.search_Box, item, "Element to be search");
         DriverAction.click(Amazon_locators.search_Button, "Search");
@@ -18,6 +20,9 @@ public class Common_functions {
     }
 
     public static void signInAmazon(String email, String pass) throws IOException {
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
+        DriverAction.setPageLoadTimeOut(5);
         DriverAction.click(Amazon_locators.sign_in_button, "Sign in");
         DriverAction.typeText(Amazon_locators.user_name_box, email, "Email");
         DriverAction.click(Amazon_locators.Continue_button, "Continue");

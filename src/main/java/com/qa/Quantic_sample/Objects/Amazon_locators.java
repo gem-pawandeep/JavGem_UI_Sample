@@ -70,11 +70,18 @@ public class Amazon_locators {
     public static By cartCount=By.xpath("//span[@id='nav-cart-count']");
     public static By payOnDelivery=By.xpath("//*[@id='p_g_shipping_options_group/4931671031']//span");
     public static By backToTop=By.xpath("//span[@class='navFooterBackToTopText']");
-    public static By newRelease=By.xpath("//*[@data-csa-c-slot-id='nav_cs_7']");
-    public static By Bestsellers=By.xpath("//*[@class='_p13n-zg-nav-tab-all_style_zg-tabs-li-div__1YdPR']");
+    public static By newRelease=By.xpath(" //a[ text()='Hot New Releases' ]");
+    public static By Bestsellers=By.xpath(" //a[ text()='Best Sellers' ]");
     public static By toprelease=By.xpath("//*[@id='anonCarousel1']//li[1]//a[1]/div");
     public static By Quantity=By.xpath("//*[@id='quantity_2']");
     public static By drpdwn=By.xpath("//*[@class='a-dropdown-item']");
+    public static By icon =By.xpath("//*[@id='nav-search']");
+    public static By temp=By.xpath("html/body/a/img");
+    public static By alert=By.xpath("//button[@onclick='jsAlert()']");
+    public static By confirm=By.xpath("//button[@onclick='jsConfirm()']");
+    public static By prompt=By.xpath("//button[@onclick='jsPrompt()']");
+
+
 }
 
 

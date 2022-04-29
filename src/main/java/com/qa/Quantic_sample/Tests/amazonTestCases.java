@@ -2,6 +2,7 @@ package com.qa.Quantic_sample.Tests;
 
 import com.gemini.automation.dataProvider.QuanticDataProvider;
 import com.gemini.automation.generic.DriverAction;
+import com.gemini.automation.generic.DriverManager;
 import com.gemini.automation.generic.QuanticUIBase;
 import com.google.gson.JsonObject;
 import com.qa.Quantic_sample.Objects.Amazon_locators;
@@ -9,6 +10,7 @@ import com.qa.Quantic_sample.Pages.Amazon;
 import com.qa.Quantic_sample.Utility.Common_functions;
 import com.qa.gemini.quartzReporting.GemTestReporter;
 import com.qa.gemini.quartzReporting.STATUS;
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -62,6 +64,7 @@ public class amazonTestCases extends QuanticUIBase {
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void validateEmptyCartByDefault(JsonObject inputData) throws IOException {
         try {
+            DriverAction.setImplicitTimeOut(5);
             DriverAction.click(Amazon_locators.cart_icon, "Cart");
             String s = DriverAction.getElementText(Amazon_locators.check_cart_empty);
             if (s.contains("is empty")) {
@@ -109,7 +112,7 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
-
+/*
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void validateFacebookHyperlink(JsonObject inputData) throws IOException {
         try {
@@ -127,7 +130,7 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
-
+*/
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void maxPriceSearchItem(JsonObject inputData) throws IOException {
         try {
@@ -164,7 +167,7 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+  /*  @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void validateLangChangeTamil(JsonObject inputData) throws IOException {
         try {
             Amazon.validateLanguage(inputData.get("Tamil").getAsString());
@@ -231,7 +234,7 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
-
+*/
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void alexaDotFromLeftTreeMenu(JsonObject inputData) throws IOException {
         try {
@@ -268,7 +271,7 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+  /*  @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void validationBrazil(JsonObject inputData) throws IOException {
         try {
             Amazon.countryValidation(inputData.get("Country").getAsString(), Amazon_locators.Brazil, inputData.get("Name").getAsString());
@@ -411,7 +414,7 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
-
+*/
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void customPriceFilter(JsonObject inputData) throws IOException {
         try {
@@ -465,7 +468,7 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
-
+/*
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void clickBackToTop(JsonObject inputData) throws IOException {
         try {
@@ -474,7 +477,7 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
-
+*/
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void newReleaseNo1(JsonObject inputData) throws IOException {
         try {
@@ -527,12 +530,85 @@ public class amazonTestCases extends QuanticUIBase {
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void amazonPageSource(JsonObject inputData) throws IOException {
         try {
-          //  GemTestReporter.addTestStep("Page Source",DriverAction.getPageSource(),STATUS.PASS);
+            //GemTestReporter.addTestStep("Page Source",DriverAction.getPageSource(),STATUS.PASS);
+            String g=DriverAction.getPageSource();
             System.out.println(DriverAction.getPageSource());
         } catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void getCSSValueFunctionality(JsonObject inputData) throws IOException {
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            String color= DriverAction.getCSSValue(Amazon_locators.icon,"background-color");
+            GemTestReporter.addTestStep("Color is :",color,STATUS.PASS);
+            String font= DriverAction.getCSSValue(Amazon_locators.icon,"font-size");
+            GemTestReporter.addTestStep("Font is : ",font,STATUS.PASS);
+          //  GemTestReporter.addTestStep("ROLE ",DriverAction.getArialRole(Amazon_locators.icon),STATUS.PASS);
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void iframeFunctionalities(JsonObject inputData) throws IOException {
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.waitSec(2);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
+            DriverAction.waitSec(2);
+            int size = DriverAction.getElements(By.tagName("iframe")).size();
+            GemTestReporter.addTestStep("total iframe",""+size,STATUS.PASS);
+            DriverAction.switchToFrame(1);
+            for(int i=0; i<size; i++){
+                DriverAction.switchToFrame(i);
+                GemTestReporter.addTestStep("iframe",""+(i+1),STATUS.PASS);
+                DriverAction.switchToDefaultContent();
+            }
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void alertFunctionality(JsonObject inputData) throws IOException {
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString());
+
+            DriverAction.click(Amazon_locators.alert);
+            DriverAction.waitSec(2);
+            String s=DriverManager.getWebDriver().switchTo().alert().getText();
+            DriverAction.switchToAlert(false);
+            DriverAction.waitSec(3);
+            GemTestReporter.addTestStep("Alert Text",""+s,STATUS.PASS);
+            DriverAction.AcceptAlert(true);
+
+            DriverAction.click(Amazon_locators.alert);
+            DriverAction.waitSec(2);
+            DriverAction.AcceptAlert(true);
+
+            DriverAction.click(Amazon_locators.confirm);
+            DriverAction.waitSec(2);
+            DriverAction.DismissAlert(true);
+
+            DriverAction.click(Amazon_locators.confirm);
+            DriverAction.waitSec(2);
+            DriverAction.AcceptAlert(true);
+
+            DriverAction.click(Amazon_locators.prompt);
+            DriverAction.waitSec(2);
+            DriverAction.AlertInput(inputData.get("name").getAsString());
+            GemTestReporter.addTestStep("SendKeys To Alert", "SendKeys To Alert Successful <br> input ~ "+inputData.get("name").getAsString(), STATUS.PASS);
+            DriverAction.waitSec(3);
+            DriverAction.AcceptAlert(true);
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
 
 }
