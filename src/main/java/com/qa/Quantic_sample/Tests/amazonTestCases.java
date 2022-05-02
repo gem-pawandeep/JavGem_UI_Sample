@@ -12,6 +12,7 @@ import com.qa.gemini.quartzReporting.GemTestReporter;
 import com.qa.gemini.quartzReporting.STATUS;
 import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
@@ -611,4 +612,22 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void switchToActiveElement(JsonObject inputData) throws IOException {
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
+            DriverAction.waitSec(2);
+            DriverAction.typeText(Amazon_locators.usrNme,inputData.get("username").getAsString()+(Keys.TAB),"username");;
+            DriverAction.waitSec(2);
+            DriverAction.typeText(DriverAction.switchToActiveElement(),inputData.get("password").getAsString()+(Keys.TAB),"password");
+            DriverAction.waitSec(2);
+            DriverAction.click(DriverAction.switchToActiveElement(),"sign in");
+            DriverAction.waitSec(2);
+        } catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
 }

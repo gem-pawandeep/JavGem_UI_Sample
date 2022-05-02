@@ -514,5 +514,16 @@
       "name":" PawanDeep",
       "url": "https://the-internet.herokuapp.com/javascript_alerts"
     }
+  },
+  "switchToActiveElement": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S057",
+    "inputData": {
+      "id": 157,
+      "username":"Admin",
+      "password": "admin123",
+      "url": "https://opensource-demo.orangehrmlive.com/"
+    }
   }
 }

@@ -80,7 +80,7 @@ public class Amazon_locators {
     public static By alert=By.xpath("//button[@onclick='jsAlert()']");
     public static By confirm=By.xpath("//button[@onclick='jsConfirm()']");
     public static By prompt=By.xpath("//button[@onclick='jsPrompt()']");
-
+    public static By usrNme=By.xpath("//*[@id='txtUsername']");
 
 }
 
