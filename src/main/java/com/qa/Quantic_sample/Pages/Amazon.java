@@ -523,6 +523,7 @@ public class Amazon {
         GemTestReporter.addTestStep("Action", "Switching control to new Tab", STATUS.PASS);
         DriverAction.switchToWindow(newTb.get(1));
         DriverAction.click(Amazon_locators.addToCart,"Add to cart");
+        DriverAction.navigateBack(true);
         DriverAction.navigateRefresh();
         DriverAction.click(Amazon_locators.cart_icon,"cart");
         DriverAction.waitSec(2);

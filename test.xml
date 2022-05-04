@@ -1,4 +1,4 @@
-<suite name="Smoke_Test" parallel="classes" thread-count="10">
+<suite name="Regression_Test" parallel="classes" thread-count="10">
     <test verbose="2" name="Test1" >
         <classes>
             <class name="com.qa.Quantic_sample.Tests.amazonTestCases"/>

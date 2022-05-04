@@ -525,5 +525,13 @@
       "password": "admin123",
       "url": "https://opensource-demo.orangehrmlive.com/"
     }
+  },
+  "seeMoreFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S058",
+    "inputData": {
+      "id": 158
+    }
   }
 }
