@@ -1,18 +1,16 @@
 package com.qa.Quantic_sample.Pages;
 
-import com.gemini.automation.generic.DriverAction;
-import com.gemini.automation.generic.DriverManager;
+import com.gemini.generic.DriverAction;
+import com.gemini.generic.DriverManager;
+import com.gemini.quartzReporting.STATUS;
 import com.qa.Quantic_sample.Objects.Amazon_locators;
 import com.qa.Quantic_sample.Utility.Common_functions;
-import com.qa.gemini.quartzReporting.GemTestReporter;
-import com.qa.gemini.quartzReporting.STATUS;
+import com.gemini.quartzReporting.GemTestReporter;
 import org.openqa.selenium.By;
-
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
-import static com.gemini.automation.generic.DriverAction.takeSnapShotBase64;
+import static com.gemini.generic.DriverAction.takeSnapShotBase64;
 
 public class Amazon {
     public static void ValidatingUrl() throws IOException {
@@ -25,7 +23,7 @@ public class Amazon {
             GemTestReporter.addTestStep("Validating URL", "Expected: Amazon.in<br>Current: " + DriverAction.getTitle(DriverAction.getCurrentURL()), STATUS.FAIL,DriverAction.takeSnapShot());
         }
         DriverAction.minimizeBrowser();
-        GemTestReporter.addTestStep("action","Minimize browser",STATUS.PASS);
+        GemTestReporter.addTestStep("action","Minimize browser", STATUS.PASS);
         DriverAction.waitSec(2);
         DriverAction.maximizeBrowser();
         GemTestReporter.addTestStep("action","Maximize browser",STATUS.PASS);

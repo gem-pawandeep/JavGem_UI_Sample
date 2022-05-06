@@ -1,16 +1,16 @@
 package com.qa.Quantic_sample.Tests;
 
-import com.gemini.automation.dataProvider.QuanticDataProvider;
-import com.gemini.automation.generic.DriverAction;
-import com.gemini.automation.generic.DriverManager;
-import com.gemini.automation.generic.QuanticUIBase;
+import com.gemini.dataProvider.QuanticDataProvider;
+import com.gemini.generic.DriverAction;
+import com.gemini.generic.DriverManager;
+import com.gemini.generic.QuanticUIBase;
 import com.google.gson.JsonObject;
 import com.qa.Quantic_sample.Objects.Amazon_locators;
 import com.qa.Quantic_sample.Pages.Amazon;
 import com.qa.Quantic_sample.Utility.Common_functions;
-import com.qa.gemini.quartzReporting.GemTestReporter;
-import com.qa.gemini.quartzReporting.STATUS;
-import org.checkerframework.checker.units.qual.A;
+import com.gemini.quartzReporting.GemTestReporter;
+import com.gemini.quartzReporting.STATUS;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -54,7 +54,7 @@ public class amazonTestCases extends QuanticUIBase {
     public void loginCorrectCredentials(JsonObject inputData) throws IOException {
         try {
             Amazon.SignIn(inputData.get("email").getAsString(), inputData.get("pass").getAsString());
-            DriverAction.waitSec(20);
+            DriverAction.waitSec(5);
             String url1 = DriverAction.getCurrentURL();
             String title = DriverAction.getTitle(url1);
             if (title.contains("Amazon.in")) {

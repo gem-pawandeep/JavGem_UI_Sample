@@ -1,11 +1,12 @@
 package com.qa.Quantic_sample.Utility;
 
-import com.gemini.automation.generic.DriverAction;
-import com.qa.Quantic_sample.Objects.Amazon_locators;
-import com.qa.gemini.quartzReporting.GemTestReporter;
-import com.qa.gemini.quartzReporting.STATUS;
-import org.openqa.selenium.By;
 
+import com.gemini.generic.DriverAction;
+import com.gemini.quartzReporting.GemTestReporter;
+import com.gemini.quartzReporting.STATUS;
+import com.qa.Quantic_sample.Objects.Amazon_locators;
+
+import org.openqa.selenium.By;
 import java.io.IOException;
 
 
@@ -13,7 +14,7 @@ public class Common_functions {
     public static void search(String item) throws IOException {
         DriverAction.setScriptTimeOut(5);
         DriverAction.setPageLoadTimeOut(5);
-        GemTestReporter.addTestStep("Action","Click on Search Box",STATUS.PASS,DriverAction.takeSnapShot());
+        GemTestReporter.addTestStep("Action","Click on Search Box", STATUS.PASS,DriverAction.takeSnapShot());
         DriverAction.typeText(Amazon_locators.search_Box, item, "Element to be search");
         DriverAction.click(Amazon_locators.search_Button, "Search");
         GemTestReporter.addTestStep("Status", "Search Successful", STATUS.PASS);
