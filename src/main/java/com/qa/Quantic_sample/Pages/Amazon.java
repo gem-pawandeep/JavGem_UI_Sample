@@ -1,11 +1,13 @@
 package com.qa.Quantic_sample.Pages;
 
+
+
 import com.gemini.generic.DriverAction;
 import com.gemini.generic.DriverManager;
+import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.qa.Quantic_sample.Objects.Amazon_locators;
 import com.qa.Quantic_sample.Utility.Common_functions;
-import com.gemini.quartzReporting.GemTestReporter;
 import org.openqa.selenium.By;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +32,7 @@ public class Amazon {
         GemTestReporter.addTestStep("Size of browser",DriverAction.getBrowserSize().toString(),STATUS.PASS);
         DriverAction.setBrowserSize(1200,644,true);
         DriverAction.waitSec(2);
-        GemTestReporter.addTestStep("Browser Location",DriverAction.getBrowserLocation().toString(),STATUS.PASS);
+        GemTestReporter.addTestStep("Browser Location",DriverAction.getBrowserLocation().toString(), STATUS.PASS);
     }
 
     public static void SignIn(String email, String pass) throws IOException {

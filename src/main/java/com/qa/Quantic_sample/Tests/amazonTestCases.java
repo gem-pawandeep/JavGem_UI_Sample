@@ -4,13 +4,12 @@ import com.gemini.dataProvider.QuanticDataProvider;
 import com.gemini.generic.DriverAction;
 import com.gemini.generic.DriverManager;
 import com.gemini.generic.QuanticUIBase;
+import com.gemini.quartzReporting.GemTestReporter;
+import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
 import com.qa.Quantic_sample.Objects.Amazon_locators;
 import com.qa.Quantic_sample.Pages.Amazon;
 import com.qa.Quantic_sample.Utility.Common_functions;
-import com.gemini.quartzReporting.GemTestReporter;
-import com.gemini.quartzReporting.STATUS;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -46,7 +45,7 @@ public class amazonTestCases extends QuanticUIBase {
         try {
             Amazon.ValidatingUrl();
         } catch (Exception e) {
-            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL, DriverAction.takeSnapShot());
         }
     }
 
@@ -618,7 +617,8 @@ public class amazonTestCases extends QuanticUIBase {
 
             DriverAction.click(Amazon_locators.prompt);
             DriverAction.waitSec(2);
-            DriverAction.AlertInput(inputData.get("name").getAsString());
+          //  DriverAction.AlertInput(inputData.get("name").getAsString());
+            DriverManager.getWebDriver().switchTo().alert().sendKeys(inputData.get("name").toString());
             GemTestReporter.addTestStep("SendKeys To Alert", "SendKeys To Alert Successful <br> input ~ "+inputData.get("name").getAsString(), STATUS.PASS);
             DriverAction.waitSec(3);
             DriverAction.AcceptAlert(true);
@@ -637,9 +637,9 @@ public class amazonTestCases extends QuanticUIBase {
             DriverAction.waitSec(2);
             DriverAction.typeText(Amazon_locators.usrNme,inputData.get("username").getAsString()+(Keys.TAB),"username");;
             DriverAction.waitSec(2);
-            DriverAction.typeText(DriverAction.switchToActiveElement(),inputData.get("password").getAsString()+(Keys.TAB),"password");
+          //  DriverAction.typeText(DriverAction.switchToActiveElement(),inputData.get("password").getAsString()+(Keys.TAB),"password");
             DriverAction.waitSec(2);
-            DriverAction.click(DriverAction.switchToActiveElement(),"sign in");
+            //DriverAction.click(DriverAction.switchToActiveElement(),"sign in");
             DriverAction.waitSec(2);
         } catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
