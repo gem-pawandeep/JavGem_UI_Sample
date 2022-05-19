@@ -1,0 +1,29 @@
+[
+  {
+    "test_name": "Test Case to create a new user",
+    "method": "POST",
+    "endpoint": "https://gorest.co.in/public/v2/users",
+    "expected_status": 201,
+    "request_body": {
+      "name": "User_97",
+      "email": "User__#unq-190_200#_____@org.com",
+      "gender": "male",
+      "status": "active"
+    },
+    "headers": {
+      "Authorization": "Bearer e44ac095d53abb1da69ff4cdc9c0bc24ea741dbc7cbe6f2ba2dfdbec9cb1ecd4"
+    }  },
+  {
+    "test_name": "Test Case to get all users",
+    "method": "Get",
+    "endpoint": "https://gorest.co.in/public/v2/users",
+    "expected_status": 200,
+    "parameters": {
+      "status": "inactive",
+      "gender": "female"
+    },
+    "headers": {
+      "Authorization": "Bearer e44ac095d53abb1da69ff4cdc9c0bc24ea741dbc7cbe6f2ba2dfdbec9cb1ecd4"
+    }
+  }
+]

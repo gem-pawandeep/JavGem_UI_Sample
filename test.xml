@@ -2,6 +2,10 @@
     <test verbose="2" name="Test1" >
         <classes>
             <class name="com.qa.Quantic_sample.Tests.amazonTestCases"/>
+            <methods>
+                <include name="launchedAmazon"></include>
+                <include name="seeMoreFunctionality"></include>
+            </methods>
         </classes>
     </test> <!-- Default test -->
 </suite> <!-- Default suite -->

@@ -1,0 +1,43 @@
+[
+  {
+    "test_name": "Test Case to get all users",
+    "method": "Get",
+    "endpoint": "https://gorest.co.in/public/v2/users",
+    "expected_status": 200
+  },
+  {
+    "test_name": "Create random",
+    "method": "POST",
+    "endpoint": "https://gorest.co.in/public/v2/users",
+    "expected_status": 201,
+    "request_body": {
+      "name": "#test_response[0](3)(name)#",
+      "email": "User_#curr-ddMMyyyyhhmmss#@org.com",
+      "gender": "#test_response[0](1)(gender)#",
+      "status": "#test_response[0](2)(status)#"
+    },
+    "headers": {
+      "Authorization": "Bearer e44ac095d53abb1da69ff4cdc9c0bc24ea741dbc7cbe6f2ba2dfdbec9cb1ecd4"
+    }
+  },
+  {
+    "test_name": "get random users with param",
+    "method": "Get",
+    "endpoint": "https://gorest.co.in/public/v2/users",
+    "expected_status": 200,
+    "parameters": {
+      "gender": "#test_response[1](gender)#",
+      "status": "#test_response[1](status)#"
+    },
+    "post_validation": {
+      "data(1)(gender)": "TO #test_response[0](1)(gender)#",
+      "data(2)(status)": "TO #test_response[0](2)(status)#"
+    }
+  },
+  {
+    "test_name": "get specific user by id",
+    "method": "Get",
+    "endpoint": "https://gorest.co.in/public/v2/users/#test_response[2](2)(id)#",
+    "expected_status": 200
+  }
+]

@@ -9,11 +9,11 @@
         </classes>
     </test> <!-- Default test -->
     <test verbose="2" name="Test2">
-        <parameter name="browserName" value="firefox"></parameter>
+        <parameter name="browserName" value="chrome"></parameter>
         <classes>
             <class name="com.qa.Quantic_sample.Tests.amazonTestCases"/>
             <methods>
-                <include name="launchedAmazon"></include>
+                <include name="seeMoreFunctionality"></include>
             </methods>
         </classes>
     </test>
