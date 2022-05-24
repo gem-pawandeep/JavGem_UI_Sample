@@ -380,6 +380,9 @@ public class Amazon {
 
     public static void priceFilter(String item, String low, String high) throws IOException {
         Common_functions.search(item);
+        DriverAction.setPageLoadTimeOut(5);
+        DriverAction.setImplicitTimeOut(5);
+        DriverAction.setScriptTimeOut(5);
         DriverAction.waitSec(2);
         DriverAction.typeText(Amazon_locators.lowPrice, low, "Minimum Price");
         DriverAction.typeText(Amazon_locators.highPrice, high, "Maximum Price");
