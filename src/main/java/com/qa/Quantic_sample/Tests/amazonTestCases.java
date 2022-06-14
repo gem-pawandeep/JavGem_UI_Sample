@@ -686,4 +686,17 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void dropDownFunctionality(JsonObject inputData){
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
+            DriverAction.dropDown(Amazon_locators.dropdown,inputData.get("name").getAsString());
+        }catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
 }

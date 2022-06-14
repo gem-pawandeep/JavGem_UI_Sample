@@ -89,6 +89,7 @@ public class Amazon_locators {
 
     public static By to=By.xpath("//*[@id='amt7']");
 
+    public static By dropdown=By.xpath("//*[@name='country']");
 }
 
 //

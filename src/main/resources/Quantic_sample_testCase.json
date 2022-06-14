@@ -555,10 +555,20 @@
   "dragAndDropFunctionality": {
     "runFlag": "Y",
     "category": "Test",
-    "scenarioID": "V2S060",
+    "scenarioID": "V2S061",
     "inputData": {
-      "id": 160,
+      "id": 161,
       "url": "http://demo.guru99.com/test/drag_drop.html"
+    }
+  },
+  "dropDownFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S062",
+    "inputData": {
+      "id": 162,
+      "url": "http://demo.guru99.com/test/newtours/register.php",
+      "name": "INDIA"
     }
   }
 }
