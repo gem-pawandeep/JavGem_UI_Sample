@@ -645,4 +645,31 @@ public class amazonTestCases extends QuanticUIBase {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void doubleClickFunctionality(JsonObject inputData){
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
+            DriverAction.waitSec(2);
+            DriverAction.doubleClick(Amazon_locators.dclick,"Double Click");
+        }catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void rightClickFunctionality(JsonObject inputData){
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
+            DriverAction.waitSec(2);
+            DriverAction.rightClick(Amazon_locators.rclick,"Right Click");
+        }catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
 }

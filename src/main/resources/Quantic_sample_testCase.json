@@ -387,7 +387,7 @@
     "scenarioID": "V2S042",
     "inputData": {
       "id": 142,
-      "item": "earphones",
+      "item": "jeans",
       "low": "1000",
       "high": "5000"
     }
@@ -435,7 +435,7 @@
     "scenarioID": "V2S047",
     "inputData": {
       "id": 147,
-      "item": "earphone"
+      "item": "jeans"
     }
   },
   "clickBackToTop": {
@@ -532,6 +532,24 @@
     "scenarioID": "V2S058",
     "inputData": {
       "id": 158
+    }
+  },
+  "doubleClickFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S059",
+    "inputData": {
+      "id": 159,
+      "url": "https://demoqa.com/buttons"
+    }
+  },
+  "rightClickFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S060",
+    "inputData": {
+      "id": 160,
+      "url": "https://demoqa.com/buttons"
     }
   }
 }

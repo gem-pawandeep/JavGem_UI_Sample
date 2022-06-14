@@ -81,6 +81,9 @@ public class Amazon_locators {
     public static By prompt=By.xpath("//button[@onclick='jsPrompt()']");
     public static By usrNme=By.xpath("//*[@id='txtUsername']");
 
+    public static By dclick=By.xpath("//button[@id='doubleClickBtn']");
+
+    public static By rclick=By.xpath("//button[@id='rightClickBtn']");
 }
 
-
+//
