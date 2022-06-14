@@ -551,5 +551,14 @@
       "id": 160,
       "url": "https://demoqa.com/buttons"
     }
+  },
+  "dragAndDropFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S060",
+    "inputData": {
+      "id": 160,
+      "url": "http://demo.guru99.com/test/drag_drop.html"
+    }
   }
 }

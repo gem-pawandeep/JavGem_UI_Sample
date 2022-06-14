@@ -84,6 +84,11 @@ public class Amazon_locators {
     public static By dclick=By.xpath("//button[@id='doubleClickBtn']");
 
     public static By rclick=By.xpath("//button[@id='rightClickBtn']");
+
+    public static By from=By.xpath("//li[@id=\"fourth\"]");
+
+    public static By to=By.xpath("//*[@id='amt7']");
+
 }
 
 //

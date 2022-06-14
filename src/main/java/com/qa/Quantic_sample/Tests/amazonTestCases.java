@@ -672,4 +672,18 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void dragAndDropFunctionality(JsonObject inputData){
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
+            DriverAction.waitSec(2);
+            DriverAction.dragAndDrop(Amazon_locators.from,Amazon_locators.to,true);
+        }catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
 }
