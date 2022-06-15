@@ -693,7 +693,7 @@ public class amazonTestCases extends QuanticUIBase {
             DriverAction.setScriptTimeOut(5);
             DriverAction.setPageLoadTimeOut(10);
             DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
-            DriverAction.dropDown(Amazon_locators.dropdown,inputData.get("name").getAsString());
+            DriverAction.dropDown(Amazon_locators.dropdown,inputData.get("name").getAsString(),true);
         }catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
@@ -706,11 +706,24 @@ public class amazonTestCases extends QuanticUIBase {
             DriverAction.setScriptTimeOut(5);
             DriverAction.setPageLoadTimeOut(10);
             DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
-            DriverAction.fileUpload(Amazon_locators.fileupload,inputData.get("path").getAsString());
+            DriverAction.fileUpload(Amazon_locators.fileupload,inputData.get("path").getAsString(),true);
             DriverAction.waitSec(5);
         }catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void pageScrollFunctionality(JsonObject inputData){
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.pageScroll(0,10000,true);
+            DriverAction.waitSec(10);
+            DriverAction.pageScroll(0,-3000,true);
+        }catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
 }

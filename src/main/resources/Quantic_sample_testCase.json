@@ -580,5 +580,13 @@
       "url": "https://chercher.tech/practice/practice-pop-ups-selenium-webdriver",
       "path": "C:\\Users\\Pawan.Deep\\Desktop\\dropDown.java"
     }
-  }
+  },
+  "pageScrollFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S064",
+    "inputData": {
+      "id": 164
+    }
+    }
 }
