@@ -14,7 +14,7 @@
     "inputData": {
       "id": 102,
       "email": "pawan27cool@gmail.com",
-      "pass": "Pawandeep28072000@"
+      "pass": "Pawan2807@"
     }
   },
   "loginIncorrectCredentials": {
@@ -59,7 +59,7 @@
     "scenarioID": "V2S007",
     "inputData": {
       "id": 107,
-      "item": "charger"
+      "item": "cooler"
     }
   },
   "validateInstagramHyperlink": {
@@ -425,8 +425,8 @@
     "scenarioID": "V2S046",
     "inputData": {
       "id": 146,
-      "item": "earphone",
-      "item2": "charger"
+      "item": "jeans",
+      "item2": "tshirt"
     }
   },
   "addTwoSameItems": {
@@ -578,7 +578,7 @@
     "inputData": {
       "id": 163,
       "url": "https://chercher.tech/practice/practice-pop-ups-selenium-webdriver",
-      "path": "C:\\Users\\Pawan.Deep\\Desktop\\dropDown.java"
+      "path": "C:\\Users\\Pawan.Deep\\Desktop\\final.java"
     }
   },
   "pageScrollFunctionality": {

@@ -648,8 +648,8 @@ public class amazonTestCases extends QuanticUIBase {
     @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
     public void doubleClickFunctionality(JsonObject inputData){
         try {
-            DriverAction.setImplicitTimeOut(5);
-            DriverAction.setScriptTimeOut(5);
+            DriverAction.setImplicitTimeOut(50);
+            DriverAction.setScriptTimeOut(50);
             DriverAction.setPageLoadTimeOut(10);
             DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
             DriverAction.waitSec(2);
