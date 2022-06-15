@@ -570,5 +570,15 @@
       "url": "http://demo.guru99.com/test/newtours/register.php",
       "name": "INDIA"
     }
+  },
+  "fileUploadFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S063",
+    "inputData": {
+      "id": 163,
+      "url": "https://chercher.tech/practice/practice-pop-ups-selenium-webdriver",
+      "path": "C:\\Users\\Pawan.Deep\\Desktop\\dropDown.java"
+    }
   }
 }

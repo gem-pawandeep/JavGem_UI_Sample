@@ -699,4 +699,18 @@ public class amazonTestCases extends QuanticUIBase {
         }
     }
 
+    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    public void fileUploadFunctionality(JsonObject inputData){
+        try {
+            DriverAction.setImplicitTimeOut(5);
+            DriverAction.setScriptTimeOut(5);
+            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
+            DriverAction.fileUpload(Amazon_locators.fileupload,inputData.get("path").getAsString());
+            DriverAction.waitSec(5);
+        }catch (Exception e) {
+            GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
+        }
+    }
+
 }
