@@ -62,7 +62,7 @@ public class Amazon_locators {
     public static By lowPrice=By.xpath("//input[@id='low-price']");
     public static By highPrice=By.xpath("//input[@id='high-price']");
     public static By Go=By.xpath("//input[@aria-labelledby='a-autoid-1-announce']");
-    public static By onScreenFirstResult=By.xpath("//*[@data-index='2']//span[@class='a-price-whole']");
+    public static By onScreenFirstResult=By.xpath("//*[@data-index='8']//span[@class='a-price-whole']");
     public static By onScreenFirstResultName=By.xpath("//*[@data-index='2']//span[@class='a-size-medium a-color-base a-text-normal']");
     public static By cartDrpDwn=By.xpath("//span[@class='a-button-text a-declarative']");
     public static By cartDel=By.xpath("//input[@value='Delete']");

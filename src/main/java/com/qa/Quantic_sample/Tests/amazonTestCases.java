@@ -53,7 +53,7 @@ public class amazonTestCases extends QuanticUIBase {
     public void loginCorrectCredentials(JsonObject inputData) throws IOException {
         try {
             Amazon.SignIn(inputData.get("email").getAsString(), inputData.get("pass").getAsString());
-            DriverAction.waitSec(5);
+            DriverAction.waitSec(20);
             String url1 = DriverAction.getCurrentURL();
             String title = DriverAction.getTitle(url1);
             if (title.contains("Amazon.in")) {
@@ -650,7 +650,7 @@ public class amazonTestCases extends QuanticUIBase {
         try {
             DriverAction.setImplicitTimeOut(50);
             DriverAction.setScriptTimeOut(50);
-            DriverAction.setPageLoadTimeOut(10);
+            DriverAction.setPageLoadTimeOut(100);
             DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
             DriverAction.waitSec(2);
             DriverAction.doubleClick(Amazon_locators.dclick,"Double Click");

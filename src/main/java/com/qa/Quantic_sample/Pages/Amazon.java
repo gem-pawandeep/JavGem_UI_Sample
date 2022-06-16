@@ -451,10 +451,6 @@ public class Amazon {
         DriverAction.waitSec(2);
         DriverAction.navigateBack(true);
         DriverAction.waitSec(2);
-        DriverAction.navigateForward(true);
-        DriverAction.waitSec(2);
-        DriverAction.navigateBack(true);
-        DriverAction.waitSec(2);
         String temp11 = verify.substring(0, 30);
         String temp22 = DriverAction.getElementText(Amazon_locators.cartTitle);
         String temp222 = temp22.substring(0, 30);
