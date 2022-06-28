@@ -680,7 +680,7 @@ public class amazonTestCases extends QuanticUIBase {
             DriverAction.setPageLoadTimeOut(10);
             DriverAction.navigateToUrl(inputData.get("url").getAsString(),true);
             DriverAction.waitSec(2);
-            DriverAction.dragAndDrop(Amazon_locators.from,Amazon_locators.to);
+            DriverAction.dragAndDrop(Amazon_locators.from,Amazon_locators.to,true);
         }catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }
@@ -719,9 +719,9 @@ public class amazonTestCases extends QuanticUIBase {
             DriverAction.setImplicitTimeOut(5);
             DriverAction.setScriptTimeOut(5);
             DriverAction.setPageLoadTimeOut(10);
-            DriverAction.pageScroll(0,10000);
+            DriverAction.pageScroll(0,10000,true);
             DriverAction.waitSec(10);
-            DriverAction.pageScroll(0,-3000);
+            DriverAction.pageScroll(0,-3000,true);
         }catch (Exception e) {
             GemTestReporter.addTestStep("Some Error Occurred", e.toString(), STATUS.FAIL,DriverAction.takeSnapShot());
         }

@@ -1,0 +1,592 @@
+{
+  "launchedAmazon": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S001",
+    "inputData": {
+      "id": 101
+    }
+  },
+  "loginCorrectCredentials": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S002",
+    "inputData": {
+      "id": 102,
+      "email": "pawan27cool@gmail.com",
+      "pass": "Pawan2807@"
+    }
+  },
+  "loginIncorrectCredentials": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S003",
+    "inputData": {
+      "id": 103,
+      "email": "abc@gmail.com",
+      "pass": "abc@123"
+    }
+  },
+  "validateEmptyCartByDefault": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S004",
+    "inputData": {
+      "id": 104
+    }
+  },
+  "getPriceOfFirstResult": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S005",
+    "inputData": {
+      "id": 105,
+      "item": "earphones"
+    }
+  },
+  "validateSortByLowToHigh": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S006",
+    "inputData": {
+      "id": 106,
+      "item": "phone"
+    }
+  },
+  "validateSortByHighToLow": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S007",
+    "inputData": {
+      "id": 107,
+      "item": "sofa set"
+    }
+  },
+  "validateInstagramHyperlink": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S008",
+    "inputData": {
+      "id": 108
+    }
+  },
+  "validateFacebookHyperlink": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S009",
+    "inputData": {
+      "id": 109
+    }
+  },
+  "validateTwitterHyperlink": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S010",
+    "inputData": {
+      "id": 110
+    }
+  },
+  "maxPriceSearchItem": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S011",
+    "inputData": {
+      "id": 111,
+      "item": "mixer"
+    }
+  },
+  "minPriceSearchItem": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S012",
+    "inputData": {
+      "id": 112,
+      "item": "mixer"
+    }
+  },
+  "getDiffMaxMinItem": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S013",
+    "inputData": {
+      "id": 113,
+      "item": "mixer"
+    }
+  },
+  "validateLangChangeHindi": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S015",
+    "inputData": {
+      "id": 114,
+      "Hindi": "hi"
+    }
+  },
+  "validateLangChangeTamil": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S015",
+    "inputData": {
+      "id": 115,
+      "Tamil": "ta"
+    }
+  },
+  "validateLangChangeTelgu": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S016",
+    "inputData": {
+      "id": 116,
+      "Telgu": "te"
+    }
+  },
+  "validateLangChangeKannada": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S017",
+    "inputData": {
+      "id": 117,
+      "Kannada": "kn"
+    }
+  },
+  "validateLangChangeMalyalam": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S018",
+    "inputData": {
+      "id": 118,
+      "Malyalam": "ml"
+    }
+  },
+  "validateLangChangeBangla": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S019",
+    "inputData": {
+      "id": 119,
+      "Bangla": "bn"
+    }
+  },
+  "validateLangChangeMarathi": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S020",
+    "inputData": {
+      "id": 120,
+      "Marathi": "mr"
+    }
+  },
+  "validateLangChangeEnglish": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S021",
+    "inputData": {
+      "id": 121,
+      "English": "en"
+    }
+  },
+  "alexaDotFromLeftTreeMenu": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S022",
+    "inputData": {
+      "id": 122
+    }
+  },
+  "validateCartAfterAdding": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S023",
+    "inputData": {
+      "id": 123,
+      "item": "charger"
+    }
+  },
+  "validateLocation": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S024",
+    "inputData": {
+      "id": 124,
+      "pincode": "281001"
+    }
+  },
+  "validationAustralia": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S025",
+    "inputData": {
+      "id": 125,
+      "Country": ".au",
+      "Name": "Australia"
+    }
+  },
+  "validationBrazil": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S026",
+    "inputData": {
+      "id": 126,
+      "Country": ".br",
+      "Name": "Brazil"
+    }
+  },
+  "validationCanada": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S027",
+    "inputData": {
+      "id": 127,
+      "Country": ".ca",
+      "Name": "Canada"
+    }
+  },
+  "validationChina": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S028",
+    "inputData": {
+      "id": 128,
+      "Country": ".cn",
+      "Name": "China"
+    }
+  },
+  "validationFrance": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S029",
+    "inputData": {
+      "id": 129,
+      "Country": ".fr",
+      "Name": "France"
+    }
+  },
+  "validationGermany": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S030",
+    "inputData": {
+      "id": 130,
+      "Country": ".de",
+      "Name": "Germany"
+    }
+  },
+  "validationItaly": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S031",
+    "inputData": {
+      "id": 131,
+      "Country": ".it",
+      "Name": "Italy"
+    }
+  },
+  "validationJapan": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S032",
+    "inputData": {
+      "id": 132,
+      "Country": ".jp",
+      "Name": "Japan"
+    }
+  },
+  "validationMexico": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S033",
+    "inputData": {
+      "id": 133,
+      "Country": ".mx",
+      "Name": "Mexico"
+    }
+  },
+  "validationNetherlands": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S034",
+    "inputData": {
+      "id": 134,
+      "Country": ".nl",
+      "Name": "Netherlands"
+    }
+  },
+  "validationPoland": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S035",
+    "inputData": {
+      "id": 135,
+      "Country": ".pl",
+      "Name": "Poland"
+    }
+  },
+  "validationSingapore": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S036",
+    "inputData": {
+      "id": 136,
+      "Country": ".sg",
+      "Name": "Singapore"
+    }
+  },
+  "validationSpain": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S037",
+    "inputData": {
+      "id": 137,
+      "Country": ".es",
+      "Name": "Spain"
+    }
+  },
+  "validationTurkey": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S038",
+    "inputData": {
+      "id": 138,
+      "Country": ".tr",
+      "Name": "Turkey"
+    }
+  },
+  "validationUAE": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S039",
+    "inputData": {
+      "id": 139,
+      "Country": ".ae",
+      "Name": "United Arab Emirates"
+    }
+  },
+  "validationUK": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S040",
+    "inputData": {
+      "id": 140,
+      "Country": ".uk",
+      "Name": "United Kingdom"
+    }
+  },
+  "validationUS": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S041",
+    "inputData": {
+      "id": 141,
+      "Country": ".com",
+      "Name": "United States"
+    }
+  },
+  "customPriceFilter": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S042",
+    "inputData": {
+      "id": 142,
+      "item": "earphone",
+      "low": "1000",
+      "high": "5000"
+    }
+  },
+  "addRemoveCart": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S043",
+    "inputData": {
+      "id": 143,
+      "item": "charger"
+    }
+  },
+  "validateCartAfterNavigating":{
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S044",
+    "inputData": {
+      "id": 144,
+      "item": "charger"
+    }
+  },
+  "validatePincodeAfterNavigate": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S045",
+    "inputData": {
+      "id": 145,
+      "pincode": "281001"
+    }
+  },
+  "validateCountCartItems": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S046",
+    "inputData": {
+      "id": 146,
+      "item": "jeans",
+      "item2": "tshirt"
+    }
+  },
+  "addTwoSameItems": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S047",
+    "inputData": {
+      "id": 147,
+      "item": "jeans"
+    }
+  },
+  "clickBackToTop": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S048",
+    "inputData": {
+      "id": 148
+    }
+  },
+  "newReleaseNo1": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S049",
+    "inputData": {
+      "id": 149
+    }
+  },
+  "bestSellerNo1": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S050",
+    "inputData": {
+      "id": 150
+    }
+  },
+  "getElementsFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S051",
+    "inputData": {
+      "id": 151,
+      "item": "earphones"
+    }
+  },
+  "getElementsTextFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S052",
+    "inputData": {
+      "id": 152,
+      "item": "earphones"
+    }
+  },
+  "amazonPageSource": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S053",
+    "inputData": {
+      "id": 153
+    }
+  },
+  "getCSSValueFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S054",
+    "inputData": {
+      "id": 154
+    }
+  },
+  "iframeFunctionalities": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S055",
+    "inputData": {
+      "id": 155,
+      "url": "https://demoqa.com/frames"
+    }
+  },
+  "alertFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S056",
+    "inputData": {
+      "id": 156,
+      "name":" PawanDeep",
+      "url": "https://the-internet.herokuapp.com/javascript_alerts"
+    }
+  },
+  "switchToActiveElement": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S057",
+    "inputData": {
+      "id": 157,
+      "username":"Admin",
+      "password": "admin123",
+      "url": "https://opensource-demo.orangehrmlive.com/"
+    }
+  },
+  "seeMoreFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S058",
+    "inputData": {
+      "id": 158
+    }
+  },
+  "doubleClickFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S059",
+    "inputData": {
+      "id": 159,
+      "url": "https://demoqa.com/buttons"
+    }
+  },
+  "rightClickFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S060",
+    "inputData": {
+      "id": 160,
+      "url": "https://demoqa.com/buttons"
+    }
+  },
+  "dragAndDropFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S061",
+    "inputData": {
+      "id": 161,
+      "url": "http://demo.guru99.com/test/drag_drop.html"
+    }
+  },
+  "dropDownFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S062",
+    "inputData": {
+      "id": 162,
+      "url": "http://demo.guru99.com/test/newtours/register.php",
+      "name": "INDIA"
+    }
+  },
+  "fileUploadFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S063",
+    "inputData": {
+      "id": 163,
+      "url": "https://chercher.tech/practice/practice-pop-ups-selenium-webdriver",
+      "path": "C:\\Users\\Pawan.Deep\\Desktop\\final.java"
+    }
+  },
+  "pageScrollFunctionality": {
+    "runFlag": "Y",
+    "category": "Test",
+    "scenarioID": "V2S064",
+    "inputData": {
+      "id": 164
+    }
+    }
+}

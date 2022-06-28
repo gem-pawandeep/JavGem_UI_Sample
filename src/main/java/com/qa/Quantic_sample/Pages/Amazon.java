@@ -466,13 +466,9 @@ public class Amazon {
 
     public static void picodeValidation(String pincode) throws IOException {
         locationValidation(pincode);
-        DriverAction.navigateToUrl("https://www.google.com/");
+        DriverAction.navigateToUrl("https://www.google.com/",true);
         DriverAction.waitSec(2);
-        DriverAction.navigateBack();
-        DriverAction.waitSec(2);
-        DriverAction.navigateForward(true);
-        DriverAction.waitSec(2);
-        DriverAction.navigateBack();
+        DriverAction.navigateBack(true);
         DriverAction.waitSec(2);
         String temp1 = DriverAction.getElementText(Amazon_locators.locationValidate);
         if (temp1.contains(pincode)) {
