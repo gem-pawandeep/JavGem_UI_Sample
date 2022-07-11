@@ -1,0 +1,13 @@
+{
+  "method": "POST",
+  "endpoint": "https://apis-beta.gemecosystem.com/user",
+  "expected_status": 201,
+"request_body":{
+  "username":"#epoch#",
+  "firstName":"test",
+  "lastName":"user",
+  "email":"#random-[2,9.5,-4]##random-[2,9.5,-4]#@geminisolutions.com",
+  "password":"abcd",
+  "company":"Dummy"
+}
+}

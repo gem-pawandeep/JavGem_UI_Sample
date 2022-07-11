@@ -1,0 +1,5 @@
+{
+"method": "GET",
+"endpoint": "https://apis-beta.gemecosystem.com/company",
+"expected_status": 200
+}

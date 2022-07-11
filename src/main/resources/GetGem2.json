@@ -1,0 +1,5 @@
+{
+  "method": "GET",
+  "endpoint": "https://apis-beta.gemecosystem.com/validate/username?username=user1234566",
+  "expected_status": 200
+}

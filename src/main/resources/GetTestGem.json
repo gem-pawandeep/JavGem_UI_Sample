@@ -1,0 +1,5 @@
+{
+  "method": "GET",
+  "endpoint": "https://apis-beta.gemecosystem.com/suiteexe?s_run_id=4d767509-f3b0-4fb6-a59d-85bfc384188b",
+  "expected_status": 200
+}

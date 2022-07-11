@@ -121,7 +121,7 @@ Feature: Example
       "project_name": "pygem_project",
       "run_type": "ON DEMAND",
       "s_report_type": "API-AUTOMATION",
-      "user": "kiran",
+      "user": "pawandeep",
       "env": "beta",
       "machine": "pa.deep",
       "initiated_by": "PAWAN",
@@ -141,7 +141,3 @@ Feature: Example
       | endpoint                           | method | expected_status |
       | https://api.publicapis.org/entries | GET    | 200             |
 
-    Given Request : Test Case to get users :
-    """
-
- """

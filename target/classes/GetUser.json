@@ -1,0 +1,5 @@
+{
+  "method": "GET",
+  "endpoint": "https://gorest.co.in/public/v2/users",
+  "expected_status": 200
+}

@@ -10,7 +10,6 @@ import com.google.gson.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.*;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 
 import java.io.InputStream;
 import java.util.List;
@@ -62,7 +61,7 @@ public class step {
             json.addProperty("test_name", "");
             JsonArray po = new JsonArray();
             po.add(json);
-            ApiClientConnect.healthCheckJsonWithoutNewTC(po);
+            ApiClientConnect.healthCheck(po);
         } else {
             DataTable dataTable = null;
             dataTable = (DataTable) str;
@@ -76,9 +75,15 @@ public class step {
             JsonObject json = (JsonObject) parser.parse(JSONObject);
             json.addProperty("test_name", "");
             array.add(json);
-            ApiClientConnect.healthCheckJsonWithoutNewTC(array);
+            ApiClientConnect.healthCheck(array);
         }
 
+    }
+
+    @Given("pawan")
+    public void pawan() {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("in pawan");
     }
 
 }
