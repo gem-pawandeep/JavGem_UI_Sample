@@ -136,7 +136,7 @@ Feature: Example
     }
     }
     """
-    And AssertClassCucumber.Assert : sample assertion :
+    And Assert : sample assertion :
     """
     {
     "response(name)":"equals AKASH123",
@@ -146,4 +146,4 @@ Feature: Example
 
   Scenario: Create user using json assertion path
     Given Request : Create User using readFile : readfile(src/main/resources/CreateUser.json)
-    And AssertClassCucumber.Assert : sample assertion : readfile(src/main/resources/assertionfile.json)
+    And Assert : sample assertion : readfile(src/main/resources/assertionfile.json)

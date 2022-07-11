@@ -132,7 +132,7 @@ public class Steps {
 
     }
 
-    @And("^AssertClassCucumber.Assert\\h:\\h(.+)\\h:")
+    @And("^Assert\\h:\\h(.+)\\h:")
     public void Assert(String assertStatement, String str) {
         GemTestReporter.addTestStep("AssertClassCucumber.Assert Statement", assertStatement, STATUS.INFO);
         JsonParser parser = new JsonParser();
@@ -140,7 +140,7 @@ public class Steps {
         Assert.assertion(recentResponse, json);
     }
 
-    @And("^AssertClassCucumber.Assert\\h:\\h(.+)\\h:\\hreadfile\\((.+)\\)$")
+    @And("^Assert\\h:\\h(.+)\\h:\\hreadfile\\((.+)\\)$")
     public void AssertFile(String assertStatement, String filePath) {
         GemTestReporter.addTestStep("AssertClassCucumber.Assert Statement", assertStatement, STATUS.INFO);
         try {
