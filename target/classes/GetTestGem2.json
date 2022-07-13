@@ -1,5 +1,0 @@
-{
-  "method": "GET",
-  "endpoint": "https://apis-beta.gemecosystem.com/suiteexe?s_run_id=pygem_project_beta_42d22827-a51e-4d21-9297-14d1be5cdb7f",
-  "expected_status": 200
-}
