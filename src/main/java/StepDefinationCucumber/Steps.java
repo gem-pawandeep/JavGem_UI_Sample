@@ -1,6 +1,6 @@
-package stepDefinationforCucumber;
+package StepDefinationCucumber;
 
-import AssertClassCucumber.Assert;
+import Assertion.Assert;
 import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.gemini.apitest.ProjectApiUrl;
@@ -25,7 +25,6 @@ import java.util.*;
 import static com.gemini.generic.QuanticGenericUtils.initializeQuanticGlobalVariables;
 
 public class Steps {
-
     @BeforeAll
     public static void beforeAll() throws InterruptedException {
         initializeQuanticGlobalVariables();
@@ -138,16 +137,11 @@ public class Steps {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(str);
         Assert.assertion(recentResponse, json);
-
-
-
-
-
     }
 
     @And("^Assert\\h:\\h(.+)\\h:\\hreadfile\\((.+)\\)$")
     public void AssertFile(String assertStatement, String filePath) {
-        GemTestReporter.addTestStep("AssertClassCucumber.Assert Statement", assertStatement, STATUS.INFO);
+        GemTestReporter.addTestStep("Assert Statement", assertStatement, STATUS.INFO);
         try {
             File file = new File(filePath);
             String content = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
@@ -162,6 +156,46 @@ public class Steps {
         }
     }
 
+    @Given("^Assert\\h:\\h(.+)\\h:\\h(.+)\\h(?i)(?<= |^)contains(?= |$)\\h(.+)$")
+    public void assertContains(String name, String filePath, String key) throws IOException {
+       try{
+           GemTestReporter.addTestStep("Contains", name, STATUS.INFO);
+           JsonParser parser = new JsonParser();
+           JsonObject json = (JsonObject) parser.parse(String.valueOf(recentResponse));
+           Assert.postAssertion(json,filePath,"contains",key);
+           System.out.println(recentResponse);
+       }catch (Exception e){
+           e.printStackTrace();
+           GemTestReporter.addTestStep("Some error occurred", "Some error occurred", STATUS.FAIL);
+       }
+    }
+
+    @Given("^Assert\\h:\\h(.+)\\h:\\h(.+)\\h(?i)(?<= |^)in(?= |$)\\h(.+)$")
+    public void assertIN(String name, String filePath, String key) {
+        try{
+            GemTestReporter.addTestStep("IN", name, STATUS.INFO);
+            JsonParser parser = new JsonParser();
+            JsonObject json = (JsonObject) parser.parse(String.valueOf(recentResponse));
+            Assert.postAssertion(json,filePath,"in",key);
+        }catch (Exception e){
+            e.printStackTrace();
+            GemTestReporter.addTestStep("Some error occurred", "Some error occurred", STATUS.FAIL);
+        }
+    }
+
+
+    @Given("^Assert\\h:\\h(.+)\\h:\\h(.+)\\h(?i)(?<= |^)equals(?= |$)\\h(.+)$")
+    public void assertEquals(String str, String str2, String str3) {
+        try{
+            GemTestReporter.addTestStep("Equals", str, STATUS.INFO);
+            JsonParser parser = new JsonParser();
+            JsonObject json = (JsonObject) parser.parse(String.valueOf(recentResponse));
+            Assert.postAssertion(json,str2,"equals",str3);
+        }catch (Exception e){
+            e.printStackTrace();
+            GemTestReporter.addTestStep("Some error occurred", "Some error occurred", STATUS.FAIL);
+        }
+    }
 
     public void assertion(JsonObject validationQueries) {
         try {

@@ -1,13 +1,12 @@
-package Main;
+package MAIN;
 
 import com.gemini.quartzReporting.GemTestReporter;
 
 import java.util.stream.Stream;
 
-public class MainClass {
+public class Main {
 
     private static String path;
-
     @SuppressWarnings({"deprecation", "rawtypes"})
     public static void main(String args[]) throws Exception {
         System.out.println("insipath");
@@ -29,8 +28,8 @@ public class MainClass {
         //    path = System.getProperty("path");
         //   String path ="src/main/java/feature_file/file.feature";
         String[] defaultOptions = {
-                "--glue", "stepDefinationforCucumber",
-                "src/main/java/featurefile/Feature.feature"
+                "--glue", "finalStepDefination",
+                "src/main/java/finalFeatureFile/finalFeature.feature"
         };
         try {
             Stream<String> cucumberOptions = Stream.concat(Stream.of(defaultOptions), Stream.of(args));

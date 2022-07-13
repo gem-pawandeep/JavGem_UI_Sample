@@ -1,4 +1,4 @@
-package AssertClassCucumber;
+package Assertion;
 
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.gemini.quartzReporting.GemTestReporter;
